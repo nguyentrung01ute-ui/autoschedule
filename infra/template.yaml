@@ -1,0 +1,94 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Auto start/stop EC2, RDS, SageMaker theo tag Schedule
+
+Parameters:
+  LabRoleArn: {Type: String, Description: "arn:aws:iam::<ACCOUNT_ID>:role/LabRole"}
+  CodeBucket: {Type: String}
+  CodeKey: {Type: String, Default: scheduler.zip}
+  AlertEmail: {Type: String}
+  ProjectTag: {Type: String, Default: AutoSchedule}
+  OwnerTag: {Type: String}
+
+Resources:
+  ReportTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: autoschedule-report
+      Tags: [{Key: Project, Value: !Ref ProjectTag}, {Key: Owner, Value: !Ref OwnerTag}]
+
+  ReportSubscription:
+    Type: AWS::SNS::Subscription
+    Properties: {TopicArn: !Ref ReportTopic, Protocol: email, Endpoint: !Ref AlertEmail}
+
+  LogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties: {LogGroupName: /aws/lambda/autoschedule, RetentionInDays: 7}
+
+  SchedulerFn:
+    Type: AWS::Lambda::Function
+    DependsOn: LogGroup
+    Properties:
+      FunctionName: autoschedule
+      Runtime: python3.12
+      Handler: scheduler.lambda_handler
+      Role: !Ref LabRoleArn
+      Timeout: 120
+      MemorySize: 128
+      Code: {S3Bucket: !Ref CodeBucket, S3Key: !Ref CodeKey}
+      Environment:
+        Variables: {TOPIC_ARN: !Ref ReportTopic, TZ_NAME: Asia/Ho_Chi_Minh}
+      Tags: [{Key: Project, Value: !Ref ProjectTag}, {Key: Owner, Value: !Ref OwnerTag}]
+
+  EnforceRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Description: Kiểm tra lịch mỗi 15 phút
+      ScheduleExpression: rate(15 minutes)
+      State: ENABLED
+      Targets: [{Id: enforce, Arn: !GetAtt SchedulerFn.Arn}]
+
+  ReportRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Description: Báo cáo 08:00 giờ VN (01:00 UTC)
+      ScheduleExpression: cron(0 1 * * ? *)
+      State: ENABLED
+      Targets:
+        - Id: report
+          Arn: !GetAtt SchedulerFn.Arn
+          Input: '{"action":"report"}'
+
+  PermEnforce:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref SchedulerFn
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt EnforceRule.Arn
+
+  PermReport:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref SchedulerFn
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt ReportRule.Arn
+
+  ErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: autoschedule-errors
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Dimensions: [{Name: FunctionName, Value: !Ref SchedulerFn}]
+      Statistic: Sum
+      Period: 900
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      TreatMissingData: notBreaching
+      AlarmActions: [!Ref ReportTopic]
+
+Outputs:
+  FunctionName: {Value: !Ref SchedulerFn}
+  TopicArn: {Value: !Ref ReportTopic}
