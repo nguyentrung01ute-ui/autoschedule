@@ -64,4 +64,5 @@ def test_overnight_window_continues_into_next_day():
     tags = {"Project": "AutoSchedule", "Schedule": "22:00-06:00", "ScheduleDays": "Mon-Fri"}
     assert desired_running(tags, at(2026, 10, 5, 23, 0)) is True
     assert desired_running(tags, at(2026, 10, 6, 3, 0)) is True
-    assert desired_running(tags, at(2026, 10, 10, 3, 0)) is False
+    assert desired_running(tags, at(2026, 10, 10, 3, 0)) is True
+    assert desired_running(tags, at(2026, 10, 10, 6, 0)) is False
