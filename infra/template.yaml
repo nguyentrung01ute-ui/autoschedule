@@ -1,28 +1,52 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: Auto start/stop EC2, RDS, SageMaker theo tag Schedule
+Description: AutoSchedule - start/stop tagged EC2, RDS and SageMaker notebook instances.
 
 Parameters:
-  LabRoleArn: {Type: String, Description: "arn:aws:iam::<ACCOUNT_ID>:role/LabRole"}
-  CodeBucket: {Type: String}
-  CodeKey: {Type: String, Default: scheduler.zip}
-  AlertEmail: {Type: String}
-  ProjectTag: {Type: String, Default: AutoSchedule}
-  OwnerTag: {Type: String}
+  LabRoleArn:
+    Type: String
+    Description: Existing Learner Lab LabRole ARN. No IAM role is created by this template.
+  CodeBucket:
+    Type: String
+  CodeKey:
+    Type: String
+    Default: scheduler.zip
+  AlertEmail:
+    Type: String
+  ProjectTag:
+    Type: String
+    Default: AutoSchedule
+  OwnerTag:
+    Type: String
+  EnforceSchedule:
+    Type: String
+    Default: "rate(15 minutes)"
+  ReportSchedule:
+    Type: String
+    Default: "cron(0 1 * * ? *)"
 
 Resources:
   ReportTopic:
     Type: AWS::SNS::Topic
     Properties:
       TopicName: autoschedule-report
-      Tags: [{Key: Project, Value: !Ref ProjectTag}, {Key: Owner, Value: !Ref OwnerTag}]
+      Tags:
+        - Key: Project
+          Value: !Ref ProjectTag
+        - Key: Owner
+          Value: !Ref OwnerTag
 
   ReportSubscription:
     Type: AWS::SNS::Subscription
-    Properties: {TopicArn: !Ref ReportTopic, Protocol: email, Endpoint: !Ref AlertEmail}
+    Properties:
+      TopicArn: !Ref ReportTopic
+      Protocol: email
+      Endpoint: !Ref AlertEmail
 
   LogGroup:
     Type: AWS::Logs::LogGroup
-    Properties: {LogGroupName: /aws/lambda/autoschedule, RetentionInDays: 7}
+    Properties:
+      LogGroupName: /aws/lambda/autoschedule
+      RetentionInDays: 7
 
   SchedulerFn:
     Type: AWS::Lambda::Function
@@ -34,24 +58,35 @@ Resources:
       Role: !Ref LabRoleArn
       Timeout: 120
       MemorySize: 128
-      Code: {S3Bucket: !Ref CodeBucket, S3Key: !Ref CodeKey}
+      Code:
+        S3Bucket: !Ref CodeBucket
+        S3Key: !Ref CodeKey
       Environment:
-        Variables: {TOPIC_ARN: !Ref ReportTopic, TZ_NAME: Asia/Ho_Chi_Minh}
-      Tags: [{Key: Project, Value: !Ref ProjectTag}, {Key: Owner, Value: !Ref OwnerTag}]
+        Variables:
+          TOPIC_ARN: !Ref ReportTopic
+          TZ_NAME: Asia/Ho_Chi_Minh
+          PROJECT_TAG: !Ref ProjectTag
+      Tags:
+        - Key: Project
+          Value: !Ref ProjectTag
+        - Key: Owner
+          Value: !Ref OwnerTag
 
   EnforceRule:
     Type: AWS::Events::Rule
     Properties:
-      Description: Kiểm tra lịch mỗi 15 phút
-      ScheduleExpression: rate(15 minutes)
+      Description: Evaluate resource schedules every 15 minutes.
+      ScheduleExpression: !Ref EnforceSchedule
       State: ENABLED
-      Targets: [{Id: enforce, Arn: !GetAtt SchedulerFn.Arn}]
+      Targets:
+        - Id: enforce
+          Arn: !GetAtt SchedulerFn.Arn
 
   ReportRule:
     Type: AWS::Events::Rule
     Properties:
-      Description: Báo cáo 08:00 giờ VN (01:00 UTC)
-      ScheduleExpression: cron(0 1 * * ? *)
+      Description: Daily managed-resource report at 08:00 Vietnam time.
+      ScheduleExpression: !Ref ReportSchedule
       State: ENABLED
       Targets:
         - Id: report
@@ -80,15 +115,20 @@ Resources:
       AlarmName: autoschedule-errors
       Namespace: AWS/Lambda
       MetricName: Errors
-      Dimensions: [{Name: FunctionName, Value: !Ref SchedulerFn}]
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref SchedulerFn
       Statistic: Sum
       Period: 900
       EvaluationPeriods: 1
       Threshold: 1
       ComparisonOperator: GreaterThanOrEqualToThreshold
       TreatMissingData: notBreaching
-      AlarmActions: [!Ref ReportTopic]
+      AlarmActions:
+        - !Ref ReportTopic
 
 Outputs:
-  FunctionName: {Value: !Ref SchedulerFn}
-  TopicArn: {Value: !Ref ReportTopic}
+  FunctionName:
+    Value: !Ref SchedulerFn
+  TopicArn:
+    Value: !Ref ReportTopic
