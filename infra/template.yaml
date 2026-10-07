@@ -47,6 +47,11 @@ Resources:
     Properties:
       LogGroupName: /aws/lambda/autoschedule
       RetentionInDays: 7
+      Tags:
+        - Key: Project
+          Value: !Ref ProjectTag
+        - Key: Owner
+          Value: !Ref OwnerTag
 
   SchedulerFn:
     Type: AWS::Lambda::Function
@@ -81,6 +86,11 @@ Resources:
       Targets:
         - Id: enforce
           Arn: !GetAtt SchedulerFn.Arn
+      Tags:
+        - Key: Project
+          Value: !Ref ProjectTag
+        - Key: Owner
+          Value: !Ref OwnerTag
 
   ReportRule:
     Type: AWS::Events::Rule
@@ -92,6 +102,11 @@ Resources:
         - Id: report
           Arn: !GetAtt SchedulerFn.Arn
           Input: '{"action":"report"}'
+      Tags:
+        - Key: Project
+          Value: !Ref ProjectTag
+        - Key: Owner
+          Value: !Ref OwnerTag
 
   PermEnforce:
     Type: AWS::Lambda::Permission
@@ -126,6 +141,11 @@ Resources:
       TreatMissingData: notBreaching
       AlarmActions:
         - !Ref ReportTopic
+      Tags:
+        - Key: Project
+          Value: !Ref ProjectTag
+        - Key: Owner
+          Value: !Ref OwnerTag
 
 Outputs:
   FunctionName:
