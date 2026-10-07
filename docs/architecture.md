@@ -1,61 +1,77 @@
 # Kiến trúc AutoSchedule
 
-> Sơ đồ dùng Mermaid, GitHub tự hiển thị. Khi cần nộp báo cáo, chụp ảnh sơ đồ này hoặc vẽ lại bằng draw.io.
+Đề tài sử dụng EventBridge scheduled rules vì yêu cầu môn học chỉ định EventBridge rule. AWS hiện khuyến nghị EventBridge Scheduler cho các thiết kế mới, nhưng scheduled rule vẫn phù hợp với phạm vi bài lab này. 
 
-```mermaid
-flowchart LR
-    subgraph EB[EventBridge]
-        R1["Rule 1: rate(15 phút)<br/>kiểm tra lịch"]
-        R2["Rule 2: cron(0 1 * * ? *)<br/>08:00 giờ VN, báo cáo"]
-    end
+## Sơ đồ
 
-    L["Lambda: autoschedule<br/>Python 3.12 - LabRole"]
+    EventBridge Rule: rate(15 minutes)
+                 |
+                 v
+          Lambda autoschedule
+             |    |    |
+             v    v    v
+            EC2  RDS  SageMaker
+             ^    ^    ^
+             |    |    |
+       Project=AutoSchedule
+       + Schedule + ScheduleDays
 
-    subgraph RES["Tài nguyên có tag Schedule"]
-        EC2["EC2 t3.nano"]
-        RDS["RDS db.t3.micro"]
-        SM["SageMaker Notebook<br/>ml.t3.medium"]
-    end
+    EventBridge Rule: cron(0 1 * * ? *)
+                 |
+                 v
+          Lambda report
+                 |
+                 v
+               SNS
+                 |
+               Email
 
-    SNS["SNS topic<br/>autoschedule-report"]
-    MAIL["Email"]
-    CW["CloudWatch Logs + Alarm Errors"]
-    S3["S3: scheduler.zip"]
-    CFN["CloudFormation stack"]
+    Lambda --> CloudWatch Logs --> Error Alarm --> SNS
+    S3 --> Lambda deployment package
+    CloudFormation --> Lambda/EventBridge/SNS/Logs/Alarm
 
-    R1 --> L
-    R2 -->|"action=report"| L
-    L -->|"start / stop"| EC2
-    L -->|"start / stop"| RDS
-    L -->|"start / stop"| SM
-    L -->|"báo cáo hằng ngày"| SNS --> MAIL
-    L -->|"log"| CW
-    CW -->|"cảnh báo lỗi"| SNS
-    S3 -.->|"mã nguồn"| L
-    CFN -.->|"dựng toàn bộ"| L
-```
+## Luồng enforce
 
-## Luồng xử lý của Lambda
+1. EventBridge gọi Lambda mỗi 15 phút.
+2. Lambda lấy EC2/RDS/SageMaker có Project=AutoSchedule và có Schedule.
+3. Lambda đọc Schedule và ScheduleDays theo giờ Asia/Ho_Chi_Minh.
+4. Nếu trạng thái thực tế khác trạng thái mong muốn thì gọi start/stop.
+5. Tài nguyên đang ở trạng thái chuyển tiếp được bỏ qua và xử lý ở chu kỳ sau.
 
-```mermaid
-flowchart TD
-    A[Lambda được gọi] --> B{event.action = report?}
-    B -- Có --> C[Thu thập tài nguyên đang chạy]
-    C --> D[Gửi email qua SNS]
-    B -- Không --> E[Thu thập EC2, RDS, SageMaker có tag Schedule]
-    E --> F{Có tag Schedule hợp lệ?}
-    F -- Không --> G[Bỏ qua]
-    F -- Có --> H{Trạng thái thực tế = mong muốn?}
-    H -- Có --> G
-    H -- Không --> I[Gọi start hoặc stop]
-    I --> J[Ghi log Actions]
-```
+## Luồng report
+
+1. Rule report chạy lúc 01:00 UTC, tương đương 08:00 Việt Nam.
+2. Lambda thu thập các tài nguyên được quản lý đang chạy.
+3. Lambda publish nội dung lên SNS.
+4. SNS gửi email tới subscription đã xác nhận.
 
 ## Quy ước tag
 
 | Tag | Ví dụ | Ý nghĩa |
 |---|---|---|
-| `Schedule` | `08:00-17:00`, `22:00-06:00`, `off` | Khung giờ chạy |
-| `ScheduleDays` | `Mon-Fri` | Ngày chạy (mặc định cả tuần) |
-| `Project` | `AutoSchedule` | Bắt buộc theo đề |
-| `Owner` | `sv01` | Bắt buộc theo đề |
+| Project | AutoSchedule | Bắt buộc để Lambda xác định phạm vi |
+| Owner | sv01 | Bắt buộc theo đề |
+| Schedule | 08:00-17:00 | Khung giờ chạy |
+| ScheduleDays | Mon-Fri | Ngày chạy |
+
+Schedule=off nghĩa là tài nguyên phải dừng.
+
+Lịch qua đêm, ví dụ 22:00-06:00, được tính tiếp sang ngày kế tiếp nhưng ngày đó phải xuất phát từ ngày bắt đầu của lịch. Ví dụ Mon-Fri 22:00-06:00 hoạt động tới 06:00 sáng thứ Bảy.
+
+## Thành phần
+
+| Thành phần | Vai trò |
+|---|---|
+| EventBridge | Kích hoạt Lambda theo chu kỳ và báo cáo |
+| Lambda | Logic đọc tag, tính lịch, start/stop, report |
+| EC2 | Loại tài nguyên 1 |
+| RDS | Loại tài nguyên 2 |
+| SageMaker Notebook | Loại tài nguyên 3 |
+| SNS | Email báo cáo/cảnh báo |
+| CloudWatch | Logs và Error Alarm |
+| S3 | Lưu artifact scheduler.zip |
+| CloudFormation | IaC triển khai lặp lại |
+
+## Ghi chú IAM
+
+Lambda dùng LabRole có sẵn. Không tạo role mới trong template. Role phải có quyền CloudWatch Logs và các API của EC2/RDS/SageMaker/SNS mà mã thực tế sử dụng.
