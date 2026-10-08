@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#1d4ed8"/></marker>
+  <marker id="dasharrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#64748b"/></marker>
+  <style>
+    .title{font:700 28px Arial;fill:#0f172a}.subtitle{font:600 17px Arial;fill:#334155}
+    .h{font:700 18px Arial;fill:#0f172a}.t{font:14px Arial;fill:#334155}.small{font:12px Arial;fill:#475569}
+    .box{fill:#fff;stroke:#2563eb;stroke-width:2}.group{fill:#f8fafc;stroke:#64748b;stroke-width:2}
+    .aws{fill:#fff;stroke:#94a3b8;stroke-width:2}.lambda{fill:#fff7ed;stroke:#f97316;stroke-width:2}
+    .event{fill:#fdf2f8;stroke:#db2777;stroke-width:2}.obs{fill:#fdf4ff;stroke:#c026d3;stroke-width:2}
+    .data{fill:#f0fdf4;stroke:#16a34a;stroke-width:2}.note{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}
+    .line{stroke:#1d4ed8;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    .dash{stroke:#64748b;stroke-width:2;stroke-dasharray:8 6;fill:none;marker-end:url(#dasharrow)}
+  </style>
+</defs>
+<rect x="15" y="15" width="1570" height="970" rx="18" fill="#fff" stroke="#0ea5e9" stroke-width="3"/>
+<text x="45" y="58" class="title">AWS Learner Lab — AutoSchedule Architecture</text>
+<text x="45" y="87" class="subtitle">Region: us-east-1 | Tag-based automatic start/stop for EC2, RDS and SageMaker</text>
+
+<rect x="35" y="110" width="360" height="330" rx="14" class="group"/>
+<text x="55" y="140" class="h">Automation — EventBridge</text>
+<rect x="55" y="160" width="320" height="105" rx="10" class="event"/>
+<text x="75" y="190" class="h">Enforce Schedule Rule</text>
+<text x="75" y="216" class="t">rate(15 minutes)</text>
+<text x="75" y="241" class="small">Invokes Lambda to evaluate tags/time</text>
+<rect x="55" y="285" width="320" height="125" rx="10" class="event"/>
+<text x="75" y="315" class="h">Daily Report Rule</text>
+<text x="75" y="341" class="t">cron(0 1 * * ? *)</text>
+<text x="75" y="364" class="small">01:00 UTC = 08:00 Vietnam</text>
+<text x="75" y="387" class="small">Invokes Lambda for daily report</text>
+
+<rect x="460" y="150" width="330" height="260" rx="14" class="lambda"/>
+<text x="490" y="185" class="h">AWS Lambda</text>
+<text x="490" y="212" class="subtitle">AutoSchedule / scheduler.py</text>
+<text x="490" y="248" class="t">• Scan resources by Project + Schedule tags</text>
+<text x="490" y="276" class="t">• Start / Stop managed resources</text>
+<text x="490" y="304" class="t">• Handle ScheduleDays and overnight windows</text>
+<text x="490" y="332" class="t">• Schedule=off → always STOP</text>
+<text x="490" y="360" class="t">• Publish daily running-resource report</text>
+
+<path d="M395 210 H460" class="line"/><path d="M395 345 H430 V330 H460" class="line"/>
+<text x="407" y="201" class="small">Invoke</text><text x="405" y="336" class="small">Invoke</text>
+
+<rect x="835" y="120" width="320" height="150" rx="14" class="obs"/>
+<text x="860" y="155" class="h">Amazon CloudWatch</text>
+<text x="860" y="183" class="t">Logs / metrics</text>
+<text x="860" y="211" class="t">Lambda execution evidence</text>
+<text x="860" y="239" class="t">Error alarm → SNS notification</text>
+<path d="M790 205 H835" class="line"/><text x="800" y="195" class="small">Logs</text>
+
+<rect x="1200" y="120" width="330" height="150" rx="14" class="event"/>
+<text x="1225" y="155" class="h">Amazon SNS</text>
+<text x="1225" y="183" class="t">AutoSchedule-Alert</text>
+<text x="1225" y="211" class="t">Daily report / CloudWatch alarm</text>
+<text x="1225" y="239" class="t">→ Email notification</text>
+<path d="M790 360 H1120 V195 H1200" class="line"/><text x="960" y="350" class="small">Daily report</text>
+<path d="M1155 195 H1200" class="line"/>
+
+<rect x="35" y="470" width="360" height="280" rx="14" class="group"/>
+<text x="55" y="500" class="h">Deployment / IaC</text>
+<rect x="55" y="525" width="320" height="90" rx="10" class="box"/>
+<text x="78" y="560" class="h">AWS CloudFormation</text>
+<text x="78" y="586" class="t">infra/template.yaml</text>
+<rect x="55" y="640" width="320" height="90" rx="10" class="data"/>
+<text x="78" y="675" class="h">Amazon S3</text>
+<text x="78" y="701" class="t">AutoSchedule deployment ZIP</text>
+<path d="M215 640 V615" class="dash"/><path d="M215 525 V490 H460" class="dash"/>
+<text x="230" y="485" class="small">Provision</text>
+
+<rect x="430" y="450" width="1080" height="350" rx="14" class="group"/>
+<text x="455" y="480" class="h">Managed Resources — selected by Project / Schedule tags</text>
+
+<rect x="460" y="510" width="300" height="220" rx="12" class="aws"/>
+<text x="485" y="545" class="h">Amazon EC2</text>
+<text x="485" y="575" class="t">Start / Stop</text>
+<text x="485" y="610" class="t">Tags:</text><text x="505" y="633" class="small">Project</text><text x="505" y="653" class="small">Owner</text><text x="505" y="673" class="small">Schedule</text><text x="505" y="693" class="small">ScheduleDays</text>
+
+<rect x="810" y="510" width="300" height="220" rx="12" class="aws"/>
+<text x="835" y="545" class="h">Amazon RDS</text>
+<text x="835" y="575" class="t">Start / Stop</text>
+<text x="835" y="610" class="t">Tags:</text><text x="855" y="633" class="small">Project</text><text x="855" y="653" class="small">Owner</text><text x="855" y="673" class="small">Schedule</text><text x="855" y="693" class="small">ScheduleDays</text>
+
+<rect x="1160" y="510" width="300" height="220" rx="12" class="aws"/>
+<text x="1185" y="545" class="h">Amazon SageMaker</text>
+<text x="1185" y="575" class="t">Notebook Instance</text>
+<text x="1185" y="603" class="t">Start / Stop</text>
+<text x="1185" y="635" class="t">Tags:</text><text x="1205" y="658" class="small">Project</text><text x="1205" y="678" class="small">Owner</text><text x="1205" y="698" class="small">Schedule</text>
+
+<path d="M625 410 V510" class="line"/><path d="M625 410 H960 V510" class="line"/><path d="M625 410 H1310 V510" class="line"/>
+<text x="635" y="440" class="small">boto3 Start / Stop</text>
+
+<rect x="460" y="745" width="1000" height="38" rx="8" class="data"/>
+<text x="480" y="770" class="small">Selection: Project=AutoSchedule | Owner=&lt;Student ID&gt; | Schedule=08:00-17:00 | ScheduleDays=Mon-Fri | Schedule=off → STOP</text>
+
+<rect x="35" y="825" width="730" height="130" rx="12" class="note"/>
+<text x="55" y="855" class="h">Important operational notes</text>
+<text x="55" y="880" class="small">1. Lambda uses existing LabRole — do not create IAM users/roles.</text>
+<text x="55" y="900" class="small">2. Test all 3 resource types: EC2, RDS, SageMaker.</text>
+<text x="55" y="920" class="small">3. Only us-east-1 / us-west-2. Clean up resources after each session.</text>
+<text x="55" y="940" class="small">4. Runtime-hour savings do not equal total AWS bill savings.</text>
+
+<rect x="800" y="825" width="730" height="130" rx="12" class="box"/>
+<text x="820" y="855" class="h">Architecture flow</text>
+<text x="820" y="880" class="t">EventBridge → Lambda → EC2 / RDS / SageMaker</text>
+<text x="820" y="905" class="t">Lambda → CloudWatch Logs → Alarm → SNS → Email</text>
+<text x="820" y="930" class="t">S3 deployment package + CloudFormation → infrastructure provisioning</text>
+<text x="820" y="950" class="small">Primary runtime control is tag-based and executed by scheduler.py.</text>
+</svg>
