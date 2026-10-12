@@ -1,4 +1,4 @@
-# AutoSchedule
+<img width="886" height="554" alt="image" src="https://github.com/user-attachments/assets/100ddbcd-1e8d-48b8-85a7-c9562514ece5" /><img width="886" height="554" alt="image" src="https://github.com/user-attachments/assets/0337b8b5-b5ac-49e2-8f73-534b20d0924d" /># AutoSchedule
 
 Tự động bật/tắt EC2, RDS và SageMaker Notebook theo tag Schedule để tiết kiệm ngân sách AWS Learner Lab.
 
@@ -30,6 +30,7 @@ Tự động bật/tắt EC2, RDS và SageMaker Notebook theo tag Schedule để
 **An toàn:** Lambda chỉ tác động tài nguyên có cả Project=AutoSchedule và Schedule.
 
 ## Cấu trúc
+<img width="886" height="554" alt="image" src="https://github.com/user-attachments/assets/37cd0bb4-2b9c-4a33-948e-513c63706405" />
 
     src/scheduler.py
     infra/template.yaml
