@@ -1,4 +1,4 @@
-<img width="886" height="554" alt="image" src="https://github.com/user-attachments/assets/100ddbcd-1e8d-48b8-85a7-c9562514ece5" /><img width="886" height="554" alt="image" src="https://github.com/user-attachments/assets/0337b8b5-b5ac-49e2-8f73-534b20d0924d" /># AutoSchedule
+># AutoSchedule
 
 Tự động bật/tắt EC2, RDS và SageMaker Notebook theo tag Schedule để tiết kiệm ngân sách AWS Learner Lab.
 
