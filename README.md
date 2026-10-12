@@ -30,7 +30,8 @@ Tự động bật/tắt EC2, RDS và SageMaker Notebook theo tag Schedule để
 **An toàn:** Lambda chỉ tác động tài nguyên có cả Project=AutoSchedule và Schedule.
 
 ## Cấu trúc
-<img width="886" height="554" alt="image" src="https://github.com/user-attachments/assets/37cd0bb4-2b9c-4a33-948e-513c63706405" />
+<img width="1682" height="1051" alt="autoschedule-infrastructure (1)" src="https://github.com/user-attachments/assets/f8694fa8-2dcd-4fb6-9f6a-a4ade1fecf15" />
+
 
     src/scheduler.py
     infra/template.yaml
