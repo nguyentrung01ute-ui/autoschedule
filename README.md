@@ -33,6 +33,7 @@ Tự động bật/tắt EC2, RDS và SageMaker Notebook theo tag Schedule để
 <img width="1682" height="1051" alt="autoschedule-infrastructure (1)" src="https://github.com/user-attachments/assets/f8694fa8-2dcd-4fb6-9f6a-a4ade1fecf15" />
 
 
+
     src/scheduler.py
     infra/template.yaml
     scripts/
