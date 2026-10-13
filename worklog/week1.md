@@ -18,7 +18,6 @@
 | **Nguyễn Văn Thi (24110334)** | Thực hành tạo RDS MySQL và SageMaker Notebook mẫu; phối hợp chuẩn bị sơ đồ kiến trúc; tìm hiểu tài liệu AWS. | **8 giờ 20 phút** | [Tạo RDS](../scripts/03_create_rds.sh) · [Tạo SageMaker Notebook](../scripts/04_create_sagemaker.sh) · [Kiến trúc](../docs/architecture.md) |
 | **Cả hai thành viên** | Cùng tìm hiểu EventBridge, boto3 và giới hạn AWS Learner Lab; rà soát trạng thái tài nguyên, worklog và các yêu cầu minh chứng. Phân chia chi tiết theo buổi cần được xác nhận với nhật ký thực tế. | Đã tính trong tổng giờ của từng thành viên; không cộng thêm lần nữa. | [Kế hoạch dự án và phân công Tuần 1](../PROJECT_PLAN.md) · [Runbook Tuần 1](../docs/week1-runbook.md) · [Lệnh kiểm tra trạng thái](../scripts/05_status.sh) |
 
-> **Lưu ý về phân công:** Bảng trên ghi lại phần việc hiện có trong worklog và kế hoạch dự án. Chỉ giữ các đầu việc mà từng thành viên thực sự đã thực hiện; nếu có khác biệt, sửa lại trước khi nộp.
 
 ## 3. Nhật ký công việc và liên kết kiểm chứng
 
