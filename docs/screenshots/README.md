@@ -1,10 +1,10 @@
 # Minh chứng AWS — Tuần 1
 
-Hiện tại, ảnh minh chứng AWS/CLI của Tuần 1 vẫn đang lưu trên máy tính người thực hiện và **chưa được tải lên repository**. Không có ảnh giả lập hoặc kết quả AWS được tạo thay thế trong thư mục này.
+Báo cáo `Bao_cao_tuan1_Nhom_DevOps&IaC.docx` được cung cấp có 14 ảnh nhúng (sơ đồ kiến trúc và ảnh AWS Console). Các ảnh hiện vẫn nằm bên trong DOCX, chưa được tách thành file ảnh riêng trong repository. Không có ảnh giả lập hoặc kết quả AWS được tạo thay thế trong thư mục này.
 
 ## Cần bổ sung
 
-Tải các ảnh gốc từ buổi thực hành vào thư mục này, rồi cập nhật liên kết trong [worklog tuần 1](../../worklog/week1.md).
+Tách ảnh gốc nhúng trong báo cáo DOCX và thêm vào thư mục này, rồi cập nhật liên kết trong [worklog tuần 1](../../worklog/week1.md). Báo cáo có ảnh S3 Block Public Access/tags/encryption, EC2 Running/tags, RDS Available/config/tags, SageMaker InService/tags và kiểm tra tài nguyên.
 
 Gợi ý tên file (chỉ dùng sau khi có ảnh thật):
 - `aws-identity-region-time.png` — Account ID, Region và thời gian.
@@ -13,6 +13,10 @@ Gợi ý tên file (chỉ dùng sau khi có ảnh thật):
 - `rds-status-tags.png` — RDS và tags.
 - `sagemaker-status-tags.png` — SageMaker Notebook và tags.
 - `status-script-output.png` — kết quả `scripts/05_status.sh`.
+
+## Điểm cần lưu ý từ báo cáo
+
+Báo cáo nhóm ghi rõ ảnh IAM Policies hiện tại chưa đủ để chứng minh `LabRole`/ARN; cần thay bằng ảnh trang IAM Roles/ARN nếu giảng viên yêu cầu chứng minh.
 
 ## Quy tắc
 
