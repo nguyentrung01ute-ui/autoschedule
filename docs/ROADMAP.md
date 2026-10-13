@@ -11,10 +11,10 @@
 | Mã Lambda | `src/scheduler.py` | Xong bản nháp, chưa chạy trên AWS |
 | Unit test | `tests/test_schedule.py` | Xong, 9 test đạt trên máy cục bộ |
 | CloudFormation | `infra/template.yaml` | Xong bản nháp, chưa deploy |
-| Script tuần 1 | `scripts/*.sh` | Xong, chưa chạy trên AWS |
+| Script tuần 1 | `scripts/*.sh` | Người thực hiện xác nhận đã thực hành Tuần 1; chưa có ảnh/log AWS trên GitHub để xác minh độc lập |
 | Sơ đồ, checklist tuần 1 | `docs/architecture.md`, `docs/week1-checklist.md` | Xong |
-| Worklog | `worklog/week1..4.md` | Mẫu trống |
-| Minh chứng | `docs/screenshots/` | Trống |
+| Worklog | `worklog/week1.md` | Đã cập nhật nội dung Tuần 1 và tổng giờ theo báo cáo nhóm; ngày thực hiện chưa xác nhận |
+| Minh chứng | `docs/screenshots/` | Ảnh AWS đang ở máy người thực hiện, chưa tải lên GitHub; thư mục chưa có minh chứng AWS được xác nhận |
 | Báo cáo, kịch bản demo, phân tích chi phí | | Chưa có |
 
 ## 2. Việc còn thiếu trong repo (bổ sung theo tuần)
@@ -32,17 +32,19 @@
 
 ## 3. Lịch chi tiết
 
-### Tuần 1 (06/10 - 12/10): Nền tảng
+### Tuần 1 (ngày thực hiện thực tế chưa xác nhận): Nền tảng
+
+> Theo xác nhận của người thực hiện, toàn bộ công việc thực hành Tuần 1 đã hoàn thành. Repository hiện chưa có ảnh AWS/CLI để xác minh độc lập kết quả cụ thể; không suy ra ngày thực hiện từ mốc kế hoạch 06/10–12/10.
 
 | ID | Việc | SV | Giờ | Minh chứng | Xong khi |
 |---|---|---|---|---|---|
-| 1.1 | Sửa `OWNER` trong `scripts/config.sh`, chạy `01_setup_s3.sh` | A | 1 | Ảnh bucket (tag, Block Public Access) | Bucket có tag, mã hóa, chặn public |
-| 1.2 | Chạy `02_create_ec2.sh` | A | 1.5 | Ảnh EC2 có cột tag | Instance running |
-| 1.3 | Chạy `03_create_rds.sh` | B | 2 | Ảnh RDS `available` | Có tag Schedule |
-| 1.4 | Chạy `04_create_sagemaker.sh` | B | 1.5 | Ảnh Notebook `InService` | Có tag Schedule |
-| 1.5 | Chụp ảnh `05_status.sh` và sơ đồ `docs/architecture.md` | B | 1 | Ảnh CLI có Account ID, Region, thời gian | |
+| 1.1 | Sửa `OWNER` trong `scripts/config.sh`, chạy `01_setup_s3.sh` | A | 1 | Ảnh bucket (tag, Block Public Access) — chưa tải lên GitHub | Thực hành đã hoàn thành theo xác nhận; cần bổ sung ảnh gốc |
+| 1.2 | Chạy `02_create_ec2.sh` | A | 1.5 | Ảnh EC2 có cột tag — chưa tải lên GitHub | Thực hành đã hoàn thành theo xác nhận; cần bổ sung ảnh gốc |
+| 1.3 | Chạy `03_create_rds.sh` | B | 2 | Ảnh RDS — chưa tải lên GitHub | Thực hành đã hoàn thành theo xác nhận; cần bổ sung ảnh gốc để xác minh trạng thái/tag |
+| 1.4 | Chạy `04_create_sagemaker.sh` | B | 1.5 | Ảnh Notebook — chưa tải lên GitHub | Thực hành đã hoàn thành theo xác nhận; cần bổ sung ảnh gốc để xác minh trạng thái/tag |
+| 1.5 | Kiểm tra bằng `05_status.sh` và chuẩn bị sơ đồ kiến trúc | B | 1 | Ảnh CLI có Account ID, Region, thời gian — đang ở máy tính, chưa tải lên GitHub | Thực hành đã hoàn thành theo xác nhận; cần upload minh chứng gốc |
 | 1.6 | Đọc tài liệu EventBridge, boto3, giới hạn lab | A+B | 4 | Ghi chú trong worklog | |
-| 1.7 | Điền `worklog/week1.md`, dừng tài nguyên cuối buổi | A+B | 1 | | Mỗi SV ≥ 8 giờ |
+| 1.7 | Cập nhật `worklog/week1.md`; xác nhận việc dừng/dọn tài nguyên | A+B | 1 | Worklog đã cập nhật; ngày chưa xác nhận | Bổ sung ngày thực tế và xác nhận việc dọn tài nguyên; không suy đoán |
 
 ### Tuần 2 (13/10 - 19/10): Chức năng lõi
 
