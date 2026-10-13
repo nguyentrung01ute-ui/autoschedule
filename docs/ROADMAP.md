@@ -14,7 +14,7 @@
 | Script tuần 1 | `scripts/*.sh` | Người thực hiện xác nhận đã thực hành Tuần 1; chưa có ảnh/log AWS trên GitHub để xác minh độc lập |
 | Sơ đồ, checklist tuần 1 | `docs/architecture.md`, `docs/week1-checklist.md` | Xong |
 | Worklog | `worklog/week1.md` | Đã cập nhật nội dung Tuần 1 và tổng giờ theo báo cáo nhóm; ngày thực hiện chưa xác nhận |
-| Minh chứng | `docs/screenshots/` | Ảnh AWS đang ở máy người thực hiện, chưa tải lên GitHub; thư mục chưa có minh chứng AWS được xác nhận |
+| Minh chứng | `docs/screenshots/` | Báo cáo nhóm DOCX có 14 ảnh nhúng về kiến trúc và AWS; chưa tách thành file ảnh riêng trong repo. Ảnh IAM Policies được ghi chú là chưa đủ chứng minh LabRole |
 | Báo cáo, kịch bản demo, phân tích chi phí | | Chưa có |
 
 ## 2. Việc còn thiếu trong repo (bổ sung theo tuần)
@@ -34,15 +34,15 @@
 
 ### Tuần 1 (ngày thực hiện thực tế chưa xác nhận): Nền tảng
 
-> Theo xác nhận của người thực hiện, toàn bộ công việc thực hành Tuần 1 đã hoàn thành. Repository hiện chưa có ảnh AWS/CLI để xác minh độc lập kết quả cụ thể; không suy ra ngày thực hiện từ mốc kế hoạch 06/10–12/10.
+> Theo xác nhận của người thực hiện, toàn bộ công việc thực hành Tuần 1 đã hoàn thành. Repository hiện báo cáo nhóm DOCX có ảnh nhúng về các bước và trạng thái tại thời điểm chụp; ảnh chưa được tách vào repo. Ngày thực hiện vẫn chưa xác nhận.
 
 | ID | Việc | SV | Giờ | Minh chứng | Xong khi |
 |---|---|---|---|---|---|
-| 1.1 | Sửa `OWNER` trong `scripts/config.sh`, chạy `01_setup_s3.sh` | A | 1 | Ảnh bucket (tag, Block Public Access) — chưa tải lên GitHub | Thực hành đã hoàn thành theo xác nhận; cần bổ sung ảnh gốc |
-| 1.2 | Chạy `02_create_ec2.sh` | A | 1.5 | Ảnh EC2 có cột tag — chưa tải lên GitHub | Thực hành đã hoàn thành theo xác nhận; cần bổ sung ảnh gốc |
-| 1.3 | Chạy `03_create_rds.sh` | B | 2 | Ảnh RDS — chưa tải lên GitHub | Thực hành đã hoàn thành theo xác nhận; cần bổ sung ảnh gốc để xác minh trạng thái/tag |
-| 1.4 | Chạy `04_create_sagemaker.sh` | B | 1.5 | Ảnh Notebook — chưa tải lên GitHub | Thực hành đã hoàn thành theo xác nhận; cần bổ sung ảnh gốc để xác minh trạng thái/tag |
-| 1.5 | Kiểm tra bằng `05_status.sh` và chuẩn bị sơ đồ kiến trúc | B | 1 | Ảnh CLI có Account ID, Region, thời gian — đang ở máy tính, chưa tải lên GitHub | Thực hành đã hoàn thành theo xác nhận; cần upload minh chứng gốc |
+| 1.1 | Sửa `OWNER` trong `scripts/config.sh`, chạy `01_setup_s3.sh` | A | 1 | Báo cáo nhóm có ảnh Block Public Access, tags/encryption; chưa tách ảnh vào repo | Thực hành đã hoàn thành theo xác nhận; cần bổ sung ảnh gốc |
+| 1.2 | Chạy `02_create_ec2.sh` | A | 1.5 | Báo cáo nhóm có ảnh EC2 Running/checks và tags; chưa tách ảnh vào repo | Thực hành đã hoàn thành theo xác nhận; cần bổ sung ảnh gốc |
+| 1.3 | Chạy `03_create_rds.sh` | B | 2 | Báo cáo nhóm có ảnh RDS Available/config/tags; chưa tách ảnh vào repo | Thực hành đã hoàn thành theo xác nhận; cần bổ sung ảnh gốc để xác minh trạng thái/tag |
+| 1.4 | Chạy `04_create_sagemaker.sh` | B | 1.5 | Báo cáo nhóm có ảnh SageMaker InService/tags; chưa tách ảnh vào repo | Thực hành đã hoàn thành theo xác nhận; cần bổ sung ảnh gốc để xác minh trạng thái/tag |
+| 1.5 | Kiểm tra bằng `05_status.sh` và chuẩn bị sơ đồ kiến trúc | B | 1 | Báo cáo nhóm có ảnh minh chứng AWS nhúng; kiểm tra lại ảnh nào thể hiện rõ Account ID/Region/thời gian trước khi nộp | Thực hành đã hoàn thành theo xác nhận; cần upload minh chứng gốc |
 | 1.6 | Đọc tài liệu EventBridge, boto3, giới hạn lab | A+B | 4 | Ghi chú trong worklog | |
 | 1.7 | Cập nhật `worklog/week1.md`; xác nhận việc dừng/dọn tài nguyên | A+B | 1 | Worklog đã cập nhật; ngày chưa xác nhận | Bổ sung ngày thực tế và xác nhận việc dọn tài nguyên; không suy đoán |
 
