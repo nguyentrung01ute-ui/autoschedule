@@ -1,14 +1,14 @@
 # Worklog tuần 1
 
-> Số giờ dưới đây được đồng bộ theo bảng phân công trong báo cáo Tuần 1. Nhóm cần bổ sung ngày thực hiện cụ thể và liên kết minh chứng thực tế trước khi nộp; không tự suy đoán ngày hoặc tạo minh chứng chưa có.
+> Trạng thái: người thực hiện xác nhận đã hoàn thành toàn bộ công việc thực hành Tuần 1. Ngày thực hiện chưa được xác nhận; ảnh minh chứng đang lưu trên máy tính và chưa được tải lên repository. Không tự suy đoán ngày, trạng thái AWS hoặc tạo minh chứng thay thế.
 
 | Ngày thực hiện | Sinh viên | Công việc | Số giờ | Có dùng AI? | Minh chứng |
 |---|---|---|---:|---|---|
-| Cần bổ sung ngày thực tế | Nguyễn Văn Trung (24110365) | Chuẩn bị repo Git, tạo và cấu hình S3, tạo EC2 mẫu, tìm hiểu tài liệu AWS và kiến trúc | 8 giờ 30 phút | Có — tham khảo/hỗ trợ, đã rà soát lại | [Repository AutoSchedule](https://github.com/nguyentrung01ute-ui/autoschedule); [sơ đồ kiến trúc](../docs/screenshots/architecture.svg). Bổ sung ảnh AWS Console thực tế trước khi nộp. |
-| Cần bổ sung ngày thực tế | Nguyễn Văn Thi (24110334) | Thực hiện sơ đồ kiến trúc, tạo RDS và SageMaker Notebook mẫu, tìm hiểu tài liệu AWS | 8 giờ 20 phút | Có — tham khảo/hỗ trợ, đã rà soát lại | [Repository AutoSchedule](https://github.com/nguyentrung01ute-ui/autoschedule); [sơ đồ kiến trúc](../docs/screenshots/architecture.svg). Bổ sung ảnh AWS Console thực tế trước khi nộp. |
+| Chưa xác nhận — cần bổ sung ngày thực tế | Nguyễn Văn Trung (24110365) | Chuẩn bị repo Git, thực hành tạo/cấu hình S3 và EC2 mẫu, tìm hiểu tài liệu AWS và kiến trúc | 8 giờ 30 phút | Có — tham khảo/hỗ trợ, đã rà soát lại | [Repository AutoSchedule](https://github.com/nguyentrung01ute-ui/autoschedule); [tài liệu kiến trúc](../docs/architecture.md). Ảnh AWS Console/CLI hiện ở máy tính, chưa có trên GitHub. |
+| Chưa xác nhận — cần bổ sung ngày thực tế | Nguyễn Văn Thi (24110334) | Thực hành tạo RDS và SageMaker Notebook mẫu, chuẩn bị sơ đồ kiến trúc, tìm hiểu tài liệu AWS | 8 giờ 20 phút | Có — tham khảo/hỗ trợ, đã rà soát lại | [Repository AutoSchedule](https://github.com/nguyentrung01ute-ui/autoschedule); [tài liệu kiến trúc](../docs/architecture.md). Ảnh AWS Console/CLI hiện ở máy tính, chưa có trên GitHub. |
 
 **Tổng giờ Nguyễn Văn Trung:** 8 giờ 30 phút  |  **Tổng giờ Nguyễn Văn Thi:** 8 giờ 20 phút
 
 **Tổng giờ nhóm:** 16 giờ 50 phút
 
-> Lưu ý: Tổng giờ đã được đồng bộ theo báo cáo nhóm, không phải xác minh độc lập từ lịch sử thao tác. Trước khi nộp, thay “Cần bổ sung ngày thực tế” bằng ngày thực hiện chính xác và cập nhật liên kết tới ảnh minh chứng thật đã lưu trong repository.
+> Lưu ý: Số giờ được giữ theo bảng phân công/báo cáo nhóm hiện có, chưa được xác minh độc lập từ lịch sử thao tác. Trước khi nộp, bổ sung ngày thực tế và tải ảnh minh chứng gốc lên `docs/screenshots/`; sau đó cập nhật liên kết trực tiếp đến các file đã tải lên. Không dùng dòng worklog này làm bằng chứng cho trạng thái AWS hiện tại.
