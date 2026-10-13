@@ -72,7 +72,7 @@ Sau đó:
     ./scripts/04_create_sagemaker.sh
     ./scripts/05_status.sh
 
-Thực hành Tuần 1 đã được người thực hiện xác nhận hoàn thành. Ảnh AWS/CLI hiện vẫn ở máy tính và chưa được đưa lên GitHub; vì vậy chưa thể xác minh độc lập các trạng thái/giá trị AWS cụ thể từ repository. Cập nhật ngày thực tế trong worklog, rồi tải ảnh gốc vào `docs/screenshots/` trước khi nộp. Không tự tạo ngày hoặc minh chứng.
+Báo cáo Tuần 1 do nhóm cung cấp có 14 ảnh nhúng ghi lại kiến trúc và thực hành AWS. Ảnh chưa được tách thành file riêng trong `docs/screenshots/`; cần bổ sung ảnh gốc và ngày thực hiện chính xác trong worklog trước khi nộp. Báo cáo tự lưu ý ảnh IAM Policies chưa đủ chứng minh LabRole. Không tự tạo ngày hoặc minh chứng.
 
 ## Test local
 
