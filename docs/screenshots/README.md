@@ -1,26 +1,32 @@
 # Minh chứng AWS — Tuần 1
 
-Báo cáo `Bao_cao_tuan1_Nhom_DevOps&IaC.docx` được cung cấp có 14 ảnh nhúng (sơ đồ kiến trúc và ảnh AWS Console). Các ảnh hiện vẫn nằm bên trong DOCX, chưa được tách thành file ảnh riêng trong repository. Không có ảnh giả lập hoặc kết quả AWS được tạo thay thế trong thư mục này.
+Thư mục này lưu các ảnh minh chứng của báo cáo Tuần 1. Hiện có 14 ảnh `week1-evidence-01.png` đến `week1-evidence-14.png` và sơ đồ `autoschedule-infrastructure.png`.
 
-## Cần bổ sung
+## Minh chứng hiện có
 
-Tách ảnh gốc nhúng trong báo cáo DOCX và thêm vào thư mục này, rồi cập nhật liên kết trong [worklog tuần 1](../../worklog/week1.md). Báo cáo có ảnh S3 Block Public Access/tags/encryption, EC2 Running/tags, RDS Available/config/tags, SageMaker InService/tags và kiểm tra tài nguyên.
+- Sơ đồ kiến trúc AutoSchedule.
+- Ảnh khởi động AWS Learner Lab và ảnh IAM Policies.
+- Ảnh S3 Block Public Access, tags và default encryption.
+- Ảnh EC2 Running, instance tags và EBS volume tags.
+- Ảnh RDS Available, cấu hình và tags.
+- Ảnh SageMaker Notebook InService và tags.
+- Ảnh kiểm tra EC2/EBS và tài nguyên còn sót.
 
-Gợi ý tên file (chỉ dùng sau khi có ảnh thật):
-- `aws-identity-region-time.png` — Account ID, Region và thời gian.
-- `s3-tags-public-access-encryption.png` — tags, Block Public Access và mã hóa của S3.
-- `ec2-instance-tags.png` — EC2 và tags.
-- `rds-status-tags.png` — RDS và tags.
-- `sagemaker-status-tags.png` — SageMaker Notebook và tags.
-- `status-script-output.png` — kết quả `scripts/05_status.sh`.
+Danh mục và liên kết tới từng ảnh: [docs/week1-evidence.md](../week1-evidence.md).
 
-## Điểm cần lưu ý từ báo cáo
+## Minh chứng còn thiếu hoặc cần xác minh trước khi nộp
 
-Báo cáo nhóm ghi rõ ảnh IAM Policies hiện tại chưa đủ để chứng minh `LabRole`/ARN; cần thay bằng ảnh trang IAM Roles/ARN nếu giảng viên yêu cầu chứng minh.
+1. **Account ID, Region và thời gian thực hành:** chưa có ảnh được xác định rõ trong danh mục hiện tại là bằng chứng đầy đủ cho cả ba thông tin. Nếu ảnh `week1-evidence-02.png` không hiển thị rõ các thông tin này, thêm ảnh AWS Console/Learner Lab thể hiện chúng.
+2. **Role LabRole của SageMaker:** ảnh IAM Policies hiện tại chưa chứng minh Notebook đã được gán `LabRole`. Cần ảnh cấu hình SageMaker Notebook thể hiện execution role được chọn; nếu cần, thêm ảnh IAM Roles thể hiện tên/ARN của role.
+3. **Kết quả chạy `scripts/05_status.sh`:** chưa có ảnh đầu ra riêng được liệt kê trong bộ 14 ảnh. Nếu báo cáo dùng script này để khẳng định trạng thái tài nguyên, lưu đầu ra thực tế và thêm ảnh/log vào thư mục.
+4. **Đối chiếu nội dung từng ảnh:** cần mở các ảnh hiện có để xác nhận chữ, trạng thái tài nguyên, tags và cấu hình đều đọc được. Không thể kết luận chỉ từ việc file ảnh tồn tại.
 
-## Quy tắc
+## Kiểm tra trước khi commit
 
-- Chỉ tải ảnh gốc đã chụp trong buổi thực hành; không dựng ảnh minh họa thay cho kết quả thật.
-- Che thông tin nhạy cảm nếu ảnh có chứa thông tin không nên công khai.
-- Không ghi ngày hoặc trạng thái tài nguyên nếu ảnh/log không hỗ trợ điều đó.
-- Sau khi tải ảnh lên, cập nhật checklist và liên kết minh chứng trong worklog.
+- [x] Có đủ 14 ảnh PNG theo danh mục.
+- [ ] Xác minh ảnh có hiển thị Account ID, Region và thời gian cần thiết.
+- [ ] Bổ sung bằng chứng SageMaker sử dụng `LabRole`.
+- [ ] Bổ sung đầu ra `scripts/05_status.sh` nếu dùng làm bằng chứng kiểm tra.
+- [ ] Kiểm tra ảnh/log không để lộ access key, secret key, session token hoặc dữ liệu nhạy cảm.
+
+Chỉ thêm ảnh chụp/log thực tế từ môi trường đã thực hành. Không tạo ảnh minh họa thay cho kết quả AWS và không suy đoán ngày hoặc trạng thái nếu nguồn không chứng minh được.
