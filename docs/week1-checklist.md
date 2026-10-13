@@ -2,7 +2,7 @@
 
 ## Trạng thái thực hành
 
-Theo xác nhận của người thực hiện, toàn bộ công việc thực hành Tuần 1 đã hoàn thành. Checklist này phân biệt việc đã thực hành với việc đã đưa minh chứng lên GitHub; nội dung bên dưới không phải kết quả AWS được xác minh độc lập từ repository.
+Theo báo cáo Tuần 1 do nhóm cung cấp, tài liệu có 14 ảnh nhúng và ghi nhận các kết quả thực hành bên dưới. Ảnh hiện nằm trong file báo cáo DOCX đính kèm, chưa được tách thành các file ảnh riêng trong repository. Các trạng thái dưới đây phản ánh báo cáo tại thời điểm chụp, không khẳng định trạng thái AWS hiện tại.
 
 - [x] Thực hiện bước cấu hình S3 bucket, tag, Block Public Access và mã hóa
 - [x] Thực hiện tạo EC2 mẫu và cấu hình tag theo bài thực hành
@@ -14,10 +14,19 @@ Theo xác nhận của người thực hiện, toàn bộ công việc thực h�
 
 ## Việc còn thiếu trên GitHub
 
-- [ ] Tải ảnh AWS Console/CLI đang lưu trên máy tính lên `docs/screenshots/`
+- [ ] Tách/tải ảnh gốc nhúng trong báo cáo DOCX lên `docs/screenshots/` và liên kết lại trong worklog
+- [ ] Bổ sung ảnh IAM Roles/ARN của `LabRole`: báo cáo hiện tại tự ghi nhận ảnh IAM Policies chưa đủ để chứng minh LabRole
 - [ ] Kiểm tra ảnh minh chứng thể hiện Account ID, Region, thời gian, trạng thái và tag phù hợp
 - [ ] Cập nhật ngày thực hiện thực tế trong `worklog/week1.md` (hiện chưa xác nhận)
 - [ ] Xác nhận và ghi lại việc dừng/dọn tài nguyên sau thực hành; không suy đoán trạng thái hiện tại
+
+## Kết quả được ghi trong báo cáo nhóm
+
+- **S3:** bucket `autoschedule-465409046652-us-east-1`; báo cáo ghi nhận Block Public Access bật, SSE-S3 và tag Project/Owner.
+- **EC2:** `autoschedule-ec2`, loại `t3.nano`, báo cáo ghi nhận Running và 2/2 checks passed; 4 tag trên instance và volume.
+- **RDS:** `autoschedule-db`, MySQL `db.t3.micro`, 20 GiB gp3, Single-AZ, không public; báo cáo ghi nhận trạng thái Available và 4 tag.
+- **SageMaker:** `autoschedule-nb`, `ml.t3.medium`, volume 5 GB, dùng LabRole; báo cáo ghi nhận InService và 4 tag.
+- **Giới hạn minh chứng:** báo cáo nêu ảnh IAM Policies chưa đủ chứng minh LabRole. Ảnh là bằng chứng lịch sử trong báo cáo, không xác nhận trạng thái hiện tại.
 
 ## Lệnh tham khảo
 
