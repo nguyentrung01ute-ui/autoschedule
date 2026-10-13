@@ -10,5 +10,3 @@
 **Tổng giờ Nguyễn Văn Trung:** 8 giờ 30 phút  |  **Tổng giờ Nguyễn Văn Thi:** 8 giờ 20 phút
 
 **Tổng giờ nhóm:** 16 giờ 50 phút
-
-> Lưu ý: Số giờ được giữ theo bảng phân công/báo cáo nhóm hiện có, chưa được xác minh độc lập từ lịch sử thao tác. Trước khi nộp, bổ sung ngày thực tế và tải ảnh minh chứng gốc lên `docs/screenshots/`; sau đó cập nhật liên kết trực tiếp đến các file đã tải lên. Không dùng dòng worklog này làm bằng chứng cho trạng thái AWS hiện tại.
