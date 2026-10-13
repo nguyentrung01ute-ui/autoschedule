@@ -2,7 +2,7 @@
 
 Các ảnh trong thư mục này được trích nguyên dạng từ báo cáo DOCX Tuần 1 do nhóm cung cấp. Tên file được giữ theo thứ tự trong báo cáo để dễ đối chiếu. Ngày thực hiện cần được xác nhận riêng; ngày chụp không được suy đoán.
 
-> **Lưu ý:** Bản chỉ mục này đã được thêm vào repository. Các ảnh PNG cần được tải lên `docs/screenshots/` bằng đúng tên bên dưới trước khi coi bộ minh chứng là đầy đủ.
+> **Trạng thái:** 14 ảnh PNG được liệt kê bên dưới đã có trong `docs/screenshots/`. Việc file tồn tại chưa bảo đảm nội dung ảnh đủ rõ hoặc chứng minh đầy đủ mọi cấu hình; các điểm còn thiếu được nêu ở cuối tài liệu.
 
 ## Danh sách ảnh
 
@@ -25,8 +25,18 @@ Các ảnh trong thư mục này được trích nguyên dạng từ báo cáo D
 
 ## Checklist trước khi nộp
 
-- [ ] Tải đủ 14 ảnh PNG vào `docs/screenshots/` theo tên ở bảng.
+- [x] Xác nhận đủ 14 ảnh PNG đã có trong `docs/screenshots/`.
 - [ ] Xác nhận ngày thực hiện và cập nhật `worklog/week1.md`; không dùng ngày commit làm ngày thực hành.
 - [ ] Kiểm tra ảnh không để lộ access key, secret, session token, email riêng hoặc dữ liệu nhạy cảm.
-- [ ] Bổ sung minh chứng IAM/LabRole rõ ràng nếu giảng viên yêu cầu.
-- [ ] Kiểm tra các ảnh thể hiện rõ Account/Region/thời gian nếu dùng để xác minh môi trường.
+- [ ] Bổ sung ảnh cấu hình SageMaker thể hiện execution role `LabRole`; ảnh IAM Policies hiện tại chưa đủ để chứng minh role được gán cho Notebook.
+- [ ] Xác minh ảnh hiện có thể hiện rõ Account ID, Region và thời gian thực hành; nếu chưa, thêm ảnh AWS Console/Learner Lab phù hợp.
+- [ ] Thêm đầu ra thực tế của `scripts/05_status.sh` nếu dùng script này làm bằng chứng trạng thái tài nguyên.
+- [ ] Mở và đối chiếu từng ảnh để xác nhận trạng thái, tags và cấu hình đọc được.
+
+## Các minh chứng cần bổ sung hoặc xác minh cụ thể
+
+1. **SageMaker/LabRole:** bổ sung ảnh trang cấu hình Notebook thể hiện execution role đang được gán là `LabRole`. Ảnh IAM Policies hiện có không đủ để chứng minh điều này.
+2. **Account ID, Region và thời gian:** xác minh ảnh `week1-evidence-02.png` có hiển thị rõ các thông tin này không. Nếu không, thêm ảnh thực tế từ AWS Console/Learner Lab.
+3. **Kết quả kiểm tra tài nguyên:** chưa có ảnh đầu ra riêng của `scripts/05_status.sh` trong danh sách 14 ảnh. Nếu dùng script làm bằng chứng, lưu đầu ra thực tế rồi thêm link tại đây và trong worklog.
+4. **Ngày thực hiện:** xác nhận ngày làm việc từ nhật ký của nhóm; không suy ra ngày thực hành từ ngày commit.
+
