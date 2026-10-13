@@ -8,7 +8,7 @@
 - **Thành viên:** Nguyễn Văn Trung (24110365), Nguyễn Văn Thi (24110334)
 - **Tổng thời lượng đã ghi nhận:** 16 giờ 50 phút
 - **Ngày thực hiện:** Chưa xác nhận được ngày cụ thể cho từng công việc. Cần đối chiếu lịch làm việc thực tế trước khi nộp; không lấy ngày commit thay cho ngày thực hành.
-- **Trạng thái minh chứng:** Báo cáo Tuần 1 do nhóm cung cấp được ghi nhận có 14 ảnh nhúng. Tại thời điểm cập nhật worklog này, các ảnh chưa được xác nhận đã tách thành file riêng và tải lên `docs/screenshots/`. Vì vậy, link mã nguồn bên dưới là link file-level để kiểm tra nội dung repository, không thay thế cho ảnh chứng minh thao tác AWS thực tế.
+- **Trạng thái minh chứng:** Đã xác nhận trên GitHub có 14 ảnh `week1-evidence-01.png` đến `week1-evidence-14.png` trong `docs/screenshots/`. Các link ảnh được liệt kê tại mục 3 và [danh mục minh chứng](../docs/week1-evidence.md). Việc ảnh tồn tại không tự động chứng minh mọi thông tin trong ảnh đều đủ rõ; cần đối chiếu nội dung ảnh trước khi nộp.
 
 ## 2. Phân công và kết quả theo thành viên
 
@@ -24,13 +24,15 @@
 | Hạng mục | Người phụ trách theo ghi nhận hiện tại | File/nguồn kiểm tra | Trạng thái minh chứng |
 |---|---|---|---|
 | Chuẩn bị repository, cấu hình môi trường và quy ước tag | Nguyễn Văn Trung | [PROJECT_PLAN.md](../PROJECT_PLAN.md) · [scripts/config.sh](../scripts/config.sh) | File kế hoạch và script có trên GitHub; cần ảnh/log thực tế để xác minh thao tác đã chạy. |
-| Tạo và cấu hình S3 (tag, Block Public Access, mã hóa mặc định) | Nguyễn Văn Trung | [scripts/01_setup_s3.sh](../scripts/01_setup_s3.sh) | Cần tải ảnh S3 gốc vào `docs/screenshots/` và liên kết trực tiếp bên dưới khi đã có file. |
-| Tạo EC2 mẫu và gắn tag | Nguyễn Văn Trung | [scripts/02_create_ec2.sh](../scripts/02_create_ec2.sh) | Cần ảnh trạng thái EC2 và tags thực tế. |
-| Tạo RDS MySQL mẫu | Nguyễn Văn Thi | [scripts/03_create_rds.sh](../scripts/03_create_rds.sh) | Cần ảnh trạng thái RDS, cấu hình và tags thực tế. |
-| Tạo SageMaker Notebook mẫu dùng LabRole | Nguyễn Văn Thi | [scripts/04_create_sagemaker.sh](../scripts/04_create_sagemaker.sh) · [Yêu cầu IAM](../docs/iam-requirements.md) | Cần ảnh trạng thái Notebook, tags và role thực tế; ảnh IAM Policies đơn lẻ chưa đủ để chứng minh LabRole. |
-| Kiểm tra Account/Region/thời gian và trạng thái tài nguyên | Cả hai | [scripts/05_status.sh](../scripts/05_status.sh) · [Runbook Tuần 1](../docs/week1-runbook.md) | Cần lưu log/ảnh đầu ra thực tế; không đánh dấu đã xác minh nếu chưa có bằng chứng. |
+| Tạo và cấu hình S3 (tag, Block Public Access, mã hóa mặc định) | Nguyễn Văn Trung | [scripts/01_setup_s3.sh](../scripts/01_setup_s3.sh) · [Ảnh S3 Block Public Access (05)](../docs/screenshots/week1-evidence-04.png) · [Ảnh S3 tags và mã hóa (06)](../docs/screenshots/week1-evidence-05.png) | Ảnh đã có trên GitHub; cần mở kiểm tra độ rõ và đối chiếu đúng nội dung trước khi nộp. |
+| Tạo EC2 mẫu và gắn tag | Nguyễn Văn Trung | [scripts/02_create_ec2.sh](../scripts/02_create_ec2.sh) · [Ảnh EC2 Running (07)](../docs/screenshots/week1-evidence-06.png) · [Ảnh EC2 tags (08)](../docs/screenshots/week1-evidence-07.png) · [Ảnh EBS tags (09)](../docs/screenshots/week1-evidence-08.png) | Ảnh đã có trên GitHub; cần mở kiểm tra độ rõ và đối chiếu đúng nội dung trước khi nộp. |
+| Tạo RDS MySQL mẫu | Nguyễn Văn Thi | [scripts/03_create_rds.sh](../scripts/03_create_rds.sh) · [Ảnh RDS Available (10)](../docs/screenshots/week1-evidence-09.png) · [Ảnh RDS configuration (11)](../docs/screenshots/week1-evidence-10.png) · [Ảnh RDS tags (12)](../docs/screenshots/week1-evidence-11.png) | Ảnh đã có trên GitHub; cần mở kiểm tra độ rõ và đối chiếu đúng nội dung trước khi nộp. |
+| Tạo SageMaker Notebook mẫu dùng LabRole | Nguyễn Văn Thi | [scripts/04_create_sagemaker.sh](../scripts/04_create_sagemaker.sh) · [Yêu cầu IAM](../docs/iam-requirements.md) · [Ảnh SageMaker InService (13)](../docs/screenshots/week1-evidence-12.png) · [Ảnh SageMaker tags (14)](../docs/screenshots/week1-evidence-13.png) · [Ảnh IAM Policies (04)](../docs/screenshots/week1-evidence-03.png) | Ảnh Notebook và tags đã có; ảnh IAM Policies chưa đủ để chứng minh LabRole. Cần kiểm tra hoặc bổ sung ảnh role thực tế nếu được yêu cầu. |
+| Kiểm tra Account/Region/thời gian và trạng thái tài nguyên | Cả hai | [scripts/05_status.sh](../scripts/05_status.sh) · [Runbook Tuần 1](../docs/week1-runbook.md) · [Ảnh khởi động Learner Lab (03)](../docs/screenshots/week1-evidence-02.png) | Script và ảnh đã có trên GitHub; cần xác nhận ảnh/log thể hiện đủ Account ID, Region và thời gian trước khi kết luận đã kiểm chứng. |
 | Sơ đồ kiến trúc và quy ước tag | Cả hai; Nguyễn Văn Thi phối hợp chuẩn bị sơ đồ theo worklog | [docs/architecture.md](../docs/architecture.md) · [PROJECT_PLAN.md](../PROJECT_PLAN.md) | File kiến trúc có trên GitHub. Nếu giảng viên yêu cầu sơ đồ draw.io gốc, cần liên kết file gốc riêng. |
-| Tập hợp ảnh và rà soát minh chứng | Cả hai | [Danh mục minh chứng Tuần 1](../docs/week1-evidence.md) | Danh mục ghi nhận 14 ảnh nhúng trong báo cáo nhóm; chưa xác nhận các PNG đã được tải lên repository. |
+| Sơ đồ kiến trúc | Cả hai; Nguyễn Văn Thi phối hợp chuẩn bị sơ đồ theo worklog | [Danh mục minh chứng Tuần 1](../docs/week1-evidence.md) · [Ảnh sơ đồ kiến trúc (02)](../docs/screenshots/week1-evidence-01.png) · [Ảnh sơ đồ kiến trúc trong thư mục screenshots](../docs/screenshots/autoschedule-infrastructure.png) | Các file ảnh đã có trên GitHub; cần xác nhận sơ đồ ảnh và file kiến trúc là phiên bản đúng cần nộp. |
+| Kiểm tra tài nguyên còn sót | Cả hai | [scripts/05_status.sh](../scripts/05_status.sh) · [Ảnh kiểm tra EC2/EBS (15)](../docs/screenshots/week1-evidence-14.png) | Ảnh đã có trên GitHub; kiểm tra nội dung và độ rõ trước khi nộp. |
+| Tập hợp ảnh và rà soát minh chứng | Cả hai | [Danh mục minh chứng Tuần 1](../docs/week1-evidence.md) · [Thư mục 14 ảnh](../docs/screenshots/) | Đã xác nhận 14 ảnh PNG có mặt trên GitHub. Cần đối chiếu từng ảnh với danh mục và kiểm tra không có dữ liệu nhạy cảm. |
 
 ## 4. Tổng hợp thời lượng
 
@@ -50,9 +52,9 @@ Hai thành viên ghi nhận có sử dụng AI để tham khảo/hỗ trợ và 
 
 - [ ] Xác nhận ngày thực hiện thực tế và đối chiếu số giờ của từng thành viên.
 - [ ] Xác nhận lại phân công trên có đúng với đóng góp thực tế của từng người.
-- [ ] Tách 14 ảnh gốc từ báo cáo nhóm và tải lên `docs/screenshots/` bằng tên khớp với [danh mục minh chứng](../docs/week1-evidence.md).
-- [ ] Thêm link trực tiếp tới từng ảnh PNG đã tải lên; không để link tới file chưa tồn tại.
-- [ ] Bổ sung ảnh/log thể hiện Account ID, Region, thời gian, trạng thái và tags của các tài nguyên AWS.
+- [x] Xác nhận 14 ảnh PNG `week1-evidence-01.png` đến `week1-evidence-14.png` đã có trong [docs/screenshots](../docs/screenshots/).
+- [x] Thêm các link trực tiếp tới ảnh hiện có trong mục 3; tiếp tục mở từng link để đối chiếu ảnh với hạng mục và [danh mục minh chứng](../docs/week1-evidence.md).
+- [ ] Kiểm tra ảnh/log có thể hiện rõ Account ID, Region, thời gian, trạng thái và tags cần chứng minh; bổ sung ảnh/log nếu còn thiếu.
 - [ ] Bổ sung minh chứng LabRole phù hợp nếu được yêu cầu; không dùng riêng ảnh IAM Policies để kết luận đã xác minh role.
 - [ ] Kiểm tra không có access key, secret, session token hoặc dữ liệu nhạy cảm trong ảnh/log trước khi commit.
 
