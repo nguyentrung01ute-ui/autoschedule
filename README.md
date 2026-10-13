@@ -55,7 +55,7 @@ Tự động bật/tắt EC2, RDS và SageMaker Notebook theo tag Schedule để
 
 ## Tuần 1
 
-Đọc docs/week1-runbook.md trước khi tạo tài nguyên.
+Đọc docs/week1-runbook.md trước khi tạo tài nguyên. Ảnh minh chứng và chú thích được quản lý tại [docs/week1-evidence.md](docs/week1-evidence.md); đặt các file PNG trong `docs/screenshots/` theo đúng tên trong bảng.
 
 Bắt đầu buổi:
 
