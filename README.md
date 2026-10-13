@@ -72,7 +72,7 @@ Sau đó:
     ./scripts/04_create_sagemaker.sh
     ./scripts/05_status.sh
 
-Không đánh dấu hoàn thành nếu chưa có ảnh/log minh chứng. Worklog phải ghi giờ thực tế.
+Thực hành Tuần 1 đã được người thực hiện xác nhận hoàn thành. Ảnh AWS/CLI hiện vẫn ở máy tính và chưa được đưa lên GitHub; vì vậy chưa thể xác minh độc lập các trạng thái/giá trị AWS cụ thể từ repository. Cập nhật ngày thực tế trong worklog, rồi tải ảnh gốc vào `docs/screenshots/` trước khi nộp. Không tự tạo ngày hoặc minh chứng.
 
 ## Test local
 
