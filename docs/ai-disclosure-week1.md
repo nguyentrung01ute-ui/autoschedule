@@ -1,7 +1,7 @@
 # Khai báo sử dụng AI — Tuần 1
 
 ## Công cụ được sử dụng
-- **Công cụ:** Claude (tên phiên bản/model cụ thể cần đối chiếu lại với lịch sử sử dụng của nhóm trước khi nộp).
+- **Công cụ:** Claude model 5.5.
 - **Phạm vi sử dụng trong tuần 1:** tham khảo và giải thích tài liệu về AWS EventBridge, boto3, EC2, RDS, SageMaker và các ràng buộc của AWS Learner Lab; hỗ trợ phác thảo/biên tập cách trình bày kiến trúc, kế hoạch và tài liệu dự án.
 - **Không khai báo trong tuần 1:** kiểm thử Lambda trên AWS. Theo kế hoạch dự án, phần kiểm thử chức năng Lambda thuộc tuần 2.
 

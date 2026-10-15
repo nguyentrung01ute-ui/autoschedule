@@ -65,10 +65,10 @@ Dự án có sử dụng công cụ AI để hỗ trợ nghiên cứu và tối 
 
 | Tên công cụ AI | Mục đích sử dụng | Công việc sinh viên tự thực hiện (kiểm chứng & sửa đổi) | Link commit minh chứng |
 |---|---|---|---|
-| **Claude 3.5 Sonnet** | Hỗ trợ cấu trúc tài liệu kiến trúc, đề xuất luồng phối hợp giữa EventBridge, Lambda và SNS. | Sinh viên tự đối chiếu với giới hạn của AWS Learner Lab, xác nhận dịch vụ chỉ dùng `LabRole`, chuẩn hóa sơ đồ kiến trúc ASCII và bảng quy ước tag. | [Commit 1fd8d61](https://github.com/nguyentrung01ute-ui/autoschedule/commit/1fd8d61) |
-| **Claude 3.5 Sonnet** | Hỗ trợ soạn thảo khung tài liệu Runbook Tuần 1 và các kịch bản kiểm tra trạng thái tài nguyên. | Sinh viên tự chạy từng lệnh CLI trong CloudShell của Learner Lab, chụp ảnh minh chứng thực tế trên Console, bổ sung các bước xử lý lỗi phiên lab hết hạn. | [Commit 68cce06](https://github.com/nguyentrung01ute-ui/autoschedule/commit/68cce06) |
+| **Claude 5.5** | Hỗ trợ cấu trúc tài liệu kiến trúc, đề xuất luồng phối hợp giữa EventBridge, Lambda và SNS. | Sinh viên tự đối chiếu với giới hạn của AWS Learner Lab, xác nhận dịch vụ chỉ dùng `LabRole`, chuẩn hóa sơ đồ kiến trúc ASCII và bảng quy ước tag. | [Commit 1fd8d61](https://github.com/nguyentrung01ute-ui/autoschedule/commit/1fd8d61) |
+| **Claude 5.5** | Hỗ trợ soạn thảo khung tài liệu Runbook Tuần 1 và các kịch bản kiểm tra trạng thái tài nguyên. | Sinh viên tự chạy từng lệnh CLI trong CloudShell của Learner Lab, chụp ảnh minh chứng thực tế trên Console, bổ sung các bước xử lý lỗi phiên lab hết hạn. | [Commit 68cce06](https://github.com/nguyentrung01ute-ui/autoschedule/commit/68cce06) |
 | **ChatGPT (GPT-4o)** | Gợi ý tham số CLI và xử lý lỗi không gán được mật khẩu hardcode khi tạo RDS (`--manage-master-user-password`). | Sinh viên tự viết lại script `scripts/03_create_rds.sh` và `scripts/04_create_sagemaker.sh`, thêm logic kiểm tra tài nguyên đã tồn tại và test tạo thật trên AWS. | [Commit 8bbadaa](https://github.com/nguyentrung01ute-ui/autoschedule/commit/8bbadaa) |
-| **Claude 3.5 Sonnet** | Gợi ý thuật toán xử lý múi giờ và hàm kiểm tra lịch `desired_running()` trong Lambda. | Sinh viên đọc hiểu toàn bộ mã nguồn, viết unit test kiểm tra các trường hợp biên (khung giờ qua đêm `22:00-06:00`, ngày cuối tuần), sửa lỗi phân trang `describe_instances`. | [Commit e91853a](https://github.com/nguyentrung01ute-ui/autoschedule/commit/e91853a) |
+| **Claude 5.5** | Gợi ý thuật toán xử lý múi giờ và hàm kiểm tra lịch `desired_running()` trong Lambda. | Sinh viên đọc hiểu toàn bộ mã nguồn, viết unit test kiểm tra các trường hợp biên (khung giờ qua đêm `22:00-06:00`, ngày cuối tuần), sửa lỗi phân trang `describe_instances`. | [Commit e91853a](https://github.com/nguyentrung01ute-ui/autoschedule/commit/e91853a) |
 
 ---
 
