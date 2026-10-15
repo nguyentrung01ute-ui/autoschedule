@@ -1,17 +1,25 @@
-# Khai báo sử dụng AI — Tuần 1
+# 7. KHAI BÁO SỬ DỤNG CÔNG CỤ AI
 
-## Công cụ được sử dụng
-- **Công cụ:** Claude model 5.5.
-- **Phạm vi sử dụng trong tuần 1:** tham khảo và giải thích tài liệu về AWS EventBridge, boto3, EC2, RDS, SageMaker và các ràng buộc của AWS Learner Lab; hỗ trợ phác thảo/biên tập cách trình bày kiến trúc, kế hoạch và tài liệu dự án.
-- **Không khai báo trong tuần 1:** kiểm thử Lambda trên AWS. Theo kế hoạch dự án, phần kiểm thử chức năng Lambda thuộc tuần 2.
+**Công cụ AI đã sử dụng:** Claude model 5.5.
 
-## Cách nhóm sử dụng và kiểm tra
-Nhóm chịu trách nhiệm lựa chọn nội dung phù hợp, đối chiếu thông tin với tài liệu AWS và kiểm tra lại tài liệu trước khi đưa vào repository. Nội dung AI cung cấp chỉ là tài liệu tham khảo, không được xem là bằng chứng cho việc tài nguyên AWS đã được tạo hoặc cấu hình thành công. Các thao tác AWS cần được chứng minh bằng ảnh chụp/log thực tế và worklog của nhóm.
+**Mục đích sử dụng:** Nhóm sử dụng Claude làm công cụ tham khảo trong quá trình tìm hiểu đề tài tự động bật/tắt tài nguyên AWS theo lịch học và chuẩn bị triển khai dự án.
 
-## Lưu ý về tính chính xác
-- Mô tả mục đích sử dụng ở trên là bản tổng hợp theo ghi nhận của nhóm; không phải bản chép nguyên văn từng prompt.
-- Trước khi nộp, nhóm cần xác nhận đúng tên/version model trong lịch sử sử dụng và sửa nếu khác.
-- Chỉ giữ lại các nội dung phản ánh đúng việc AI đã hỗ trợ thực tế; không ghi rằng AI đã thực hiện thao tác AWS thay cho thành viên.
+## Nội dung AI hỗ trợ trong tuần 1
 
-## Minh chứng Git
-Commit bổ sung khai báo này: sẽ được liên kết trong worklog sau khi commit được tạo.
+- Giải thích tổng quan cách kết hợp các dịch vụ AWS để xây dựng hệ thống tự động bật/tắt tài nguyên theo lịch.
+- Hỗ trợ tìm hiểu vai trò của Amazon EventBridge, EC2, RDS và SageMaker trong kiến trúc dự kiến của hệ thống.
+- Gợi ý những nội dung cần chuẩn bị khi tổ chức repository, tài liệu kỹ thuật và kế hoạch triển khai dự án.
+
+## Prompt tiêu biểu đã sử dụng
+
+- “Giải thích kiến trúc hệ thống tự động bật/tắt tài nguyên AWS theo lịch học và vai trò của từng dịch vụ trong kiến trúc.”
+- “Phân tích vai trò của Amazon EventBridge, EC2, RDS và SageMaker trong giải pháp tự động quản lý trạng thái tài nguyên AWS.”
+- “Đề xuất các nội dung cần chuẩn bị trong tuần đầu để tổ chức repository và chuẩn bị triển khai một dự án DevOps trên AWS.”
+
+## Phần nhóm tự thực hiện và hoàn thiện
+
+Nhóm tự xác định mục tiêu đề tài, nghiên cứu yêu cầu, lựa chọn hướng tiếp cận, tổ chức repository, phân công nhiệm vụ và thực hiện các thao tác tạo tài nguyên AWS được ghi nhận trong báo cáo. Nhóm tự tổng hợp kết quả thực tế, bổ sung đường dẫn GitHub và ảnh minh chứng, đồng thời chịu trách nhiệm về tính chính xác của báo cáo.
+
+## Lưu ý về phạm vi tuần 1
+
+Nội dung khai báo trên mô tả việc sử dụng AI làm công cụ tham khảo; không có nghĩa AI thay nhóm thực hiện thao tác trên AWS. Các thao tác tạo và cấu hình tài nguyên cần được đối chiếu với worklog và ảnh minh chứng thực tế. Trước khi nộp, nhóm cần xác nhận tên/version model “Claude model 5.5” đúng với công cụ đã sử dụng.
