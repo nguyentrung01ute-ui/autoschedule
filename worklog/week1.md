@@ -61,14 +61,13 @@
 
 ## 5. Khai báo sử dụng AI (Tiêu chí 7)
 
-Dự án có sử dụng công cụ AI để hỗ trợ nghiên cứu và tối ưu hóa giải pháp. Chi tiết tài liệu khai báo: [docs/ai-disclosure-week1.md](../docs/ai-disclosure-week1.md). Dưới đây là bảng khai báo chi tiết minh bạch theo đúng quy định của môn học:
+Dự án có sử dụng **Claude (bản thông thường; không ghi model/version cụ thể)** để hỗ trợ nghiên cứu và soạn thảo tài liệu. Chi tiết khai báo: [docs/ai-disclosure-week1.md](../docs/ai-disclosure-week1.md). Chỉ ghi công cụ đã được xác nhận sử dụng; không khai báo ChatGPT hoặc phiên bản/model chưa được xác nhận.
 
 | Tên công cụ AI | Mục đích sử dụng | Công việc sinh viên tự thực hiện (kiểm chứng & sửa đổi) | Link commit minh chứng |
 |---|---|---|---|
-| **Claude 5.5** | Hỗ trợ cấu trúc tài liệu kiến trúc, đề xuất luồng phối hợp giữa EventBridge, Lambda và SNS. | Sinh viên tự đối chiếu với giới hạn của AWS Learner Lab, xác nhận dịch vụ chỉ dùng `LabRole`, chuẩn hóa sơ đồ kiến trúc ASCII và bảng quy ước tag. | [Commit 1fd8d61](https://github.com/nguyentrung01ute-ui/autoschedule/commit/1fd8d61) |
-| **Claude 5.5** | Hỗ trợ soạn thảo khung tài liệu Runbook Tuần 1 và các kịch bản kiểm tra trạng thái tài nguyên. | Sinh viên tự chạy từng lệnh CLI trong CloudShell của Learner Lab, chụp ảnh minh chứng thực tế trên Console, bổ sung các bước xử lý lỗi phiên lab hết hạn. | [Commit 68cce06](https://github.com/nguyentrung01ute-ui/autoschedule/commit/68cce06) |
-| **ChatGPT (GPT-4o)** | Gợi ý tham số CLI và xử lý lỗi không gán được mật khẩu hardcode khi tạo RDS (`--manage-master-user-password`). | Sinh viên tự viết lại script `scripts/03_create_rds.sh` và `scripts/04_create_sagemaker.sh`, thêm logic kiểm tra tài nguyên đã tồn tại và test tạo thật trên AWS. | [Commit 8bbadaa](https://github.com/nguyentrung01ute-ui/autoschedule/commit/8bbadaa) |
-| **Claude 5.5** | Gợi ý thuật toán xử lý múi giờ và hàm kiểm tra lịch `desired_running()` trong Lambda. | Sinh viên đọc hiểu toàn bộ mã nguồn, viết unit test kiểm tra các trường hợp biên (khung giờ qua đêm `22:00-06:00`, ngày cuối tuần), sửa lỗi phân trang `describe_instances`. | [Commit e91853a](https://github.com/nguyentrung01ute-ui/autoschedule/commit/e91853a) |
+| **Claude (bản thông thường; không ghi model/version cụ thể)** | Hỗ trợ tham khảo cấu trúc tài liệu kiến trúc và cách trình bày luồng phối hợp giữa EventBridge, Lambda và SNS. | Sinh viên tự rà soát nội dung theo yêu cầu dự án và giới hạn AWS Learner Lab, sau đó chỉnh sửa tài liệu trong repository. | [Commit kiến trúc](https://github.com/nguyentrung01ute-ui/autoschedule/commit/1fd8d61db48a09362c802cdfe4efa5b47d433d2b) |
+| **Claude (bản thông thường; không ghi model/version cụ thể)** | Hỗ trợ tham khảo cách tổ chức tài liệu Runbook Tuần 1 và checklist kiểm tra tài nguyên. | Sinh viên tự rà soát và hoàn thiện các bước hướng dẫn trong runbook. Chỉ xem các thao tác AWS là đã thực hiện khi có minh chứng tương ứng. | [Commit runbook](https://github.com/nguyentrung01ute-ui/autoschedule/commit/68cce0684e522a4c18b7327ffb363c28b78a8cc2) |
+| **Claude (bản thông thường; không ghi model/version cụ thể)** | Hỗ trợ tham khảo cách diễn đạt logic lịch và xử lý múi giờ trong tài liệu/mã nguồn. | Sinh viên tự đọc, kiểm tra và chỉnh sửa mã nguồn; các kiểm thử hoặc thao tác triển khai chỉ được xem là hoàn tất khi có kết quả kiểm chứng thực tế. | [Commit scheduler](https://github.com/nguyentrung01ute-ui/autoschedule/commit/e91853a) |
 
 ---
 
