@@ -46,7 +46,11 @@ Các số giờ trên được giữ theo worklog/báo cáo nhóm hiện có. Kh
 
 ## 5. Khai báo sử dụng AI
 
-Hai thành viên ghi nhận có sử dụng AI để tham khảo/hỗ trợ và đã rà soát lại nội dung. Khi nộp báo cáo, cần mô tả trung thực AI đã hỗ trợ phần nào và thành viên đã tự kiểm tra, chạy thử hoặc chỉnh sửa ra sao; không xem nội dung do AI tạo là bằng chứng cho thao tác AWS.
+- **Khai báo chi tiết:** [docs/ai-disclosure-week1.md](../docs/ai-disclosure-week1.md).
+- **Commit tạo khai báo AI:** [efe013161d455354457311cb809a8034b3e1bc84](https://github.com/nguyentrung01ute-ui/autoschedule/commit/efe013161d455354457311cb809a8034b3e1bc84).
+- **Commit bổ sung liên kết sản phẩm/minh chứng:** [ac620878a5f9121d2dbe88eebdc7a601a3fd023b](https://github.com/nguyentrung01ute-ui/autoschedule/commit/ac620878a5f9121d2dbe88eebdc7a601a3fd023b).
+
+Khai báo AI là bản tổng hợp mục đích sử dụng, không phải bản chép nguyên văn từng prompt. Nhóm cần xác nhận tên/version model và chỉ giữ các nội dung đúng với lịch sử sử dụng thực tế. Không xem nội dung AI tạo là bằng chứng cho thao tác AWS.
 
 ## 6. Việc cần hoàn tất trước khi nộp
 
