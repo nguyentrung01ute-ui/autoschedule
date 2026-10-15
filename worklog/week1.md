@@ -61,7 +61,7 @@
 
 ## 5. Khai báo sử dụng AI (Tiêu chí 7)
 
-Dự án có sử dụng **Claude (bản thông thường; không ghi model/version cụ thể)** để hỗ trợ nghiên cứu và soạn thảo tài liệu. Chi tiết khai báo: [docs/ai-disclosure-week1.md](../docs/ai-disclosure-week1.md). Chỉ ghi công cụ đã được xác nhận sử dụng; không khai báo ChatGPT hoặc phiên bản/model chưa được xác nhận.
+Dự án có sử dụng **Claude (bản thông thường; không ghi model/version cụ thể)** để hỗ trợ nghiên cứu và soạn thảo tài liệu. Chỉ ghi công cụ đã được xác nhận sử dụng; không khai báo ChatGPT hoặc phiên bản/model chưa được xác nhận.
 
 | Tên công cụ AI | Mục đích sử dụng | Công việc sinh viên tự thực hiện (kiểm chứng & sửa đổi) | Link commit minh chứng |
 |---|---|---|---|
@@ -87,5 +87,4 @@ Dự án có sử dụng **Claude (bản thông thường; không ghi model/vers
 - [Runbook Tuần 1](../docs/week1-runbook.md)
 - [Danh mục minh chứng Tuần 1](../docs/week1-evidence.md)
 - [Sơ đồ/ghi chú kiến trúc](../docs/architecture.md)
-- [Khai báo sử dụng AI chi tiết](../docs/ai-disclosure-week1.md)
 - [Script kiểm tra trạng thái AWS](../scripts/05_status.sh)
