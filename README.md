@@ -115,4 +115,5 @@ Chu kỳ EventBridge 15 phút giúp giảm số lần gọi nhưng tạo độ t
 
 ## AI
 
-Đề cho phép dùng LLM. Báo cáo phải ghi phần AI hỗ trợ và phần sinh viên đã đọc, triển khai, kiểm thử và giải thích được.
+Đề cho phép dùng LLM. Báo cáo có sử dụng Claude mô hình 5.5 và Chat GPT hổ trợ tham khảo và fix các lỗi.
+
