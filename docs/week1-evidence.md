@@ -20,3 +20,20 @@
 | [week1-evidence-14.png](screenshots/week1-evidence-14.png) | EC2/EBS và kiểm tra tài nguyên còn sót | Đối chiếu dọn dẹp |
 | [week1-evidence-15-sagemaker-execution-role.png](screenshots/week1-evidence-15-sagemaker-execution-role.png) | SageMaker Notebook execution role | Ảnh bổ sung cho thấy IAM role ARN chứa `LabRole` |
 | [week1-evidence-16-account-region.png](screenshots/week1-evidence-16-account-region.png) | AWS Account ID và Region | Ảnh bổ sung hiển thị Account ID và `us-east-1`; kiểm tra ngày/giờ riêng nếu yêu cầu |
+
+
+## Liên kết sản phẩm và khai báo AI
+
+Các liên kết dưới đây mở trực tiếp từng tệp trong repository:
+
+- [Kế hoạch dự án](../PROJECT_PLAN.md)
+- [Thiết kế kiến trúc](architecture.md)
+- [Runbook Tuần 1](week1-runbook.md)
+- [Worklog Tuần 1](../worklog/week1.md)
+- [Mã nguồn scheduler](../src/scheduler.py)
+- [Template CloudFormation](../infra/template.yaml)
+- [Khai báo sử dụng AI Tuần 1](ai-disclosure-week1.md)
+
+Commit bổ sung khai báo AI: [efe013161d455354457311cb809a8034b3e1bc84](https://github.com/nguyentrung01ute-ui/autoschedule/commit/efe013161d455354457311cb809a8034b3e1bc84).
+
+> Lưu ý: các tệp mã nguồn và template là sản phẩm trong repository; bản thân việc có tệp không chứng minh rằng mã đã được triển khai hoặc kiểm thử thành công trên AWS. Kết quả triển khai cần có minh chứng thực tế tương ứng.
