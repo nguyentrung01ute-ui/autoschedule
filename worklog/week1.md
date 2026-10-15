@@ -61,13 +61,15 @@
 
 ## 5. Khai báo sử dụng AI (Tiêu chí 7)
 
-Dự án có sử dụng **Claude (bản thông thường; không ghi model/version cụ thể)** để hỗ trợ nghiên cứu và soạn thảo tài liệu. Chi tiết khai báo: [docs/ai-disclosure-week1.md](../docs/ai-disclosure-week1.md). Chỉ ghi công cụ đã được xác nhận sử dụng; không khai báo ChatGPT hoặc phiên bản/model chưa được xác nhận.
+Trong tuần 1, nhóm sử dụng **Claude (bản thông thường; chưa xác nhận model/version cụ thể)** để hỗ trợ tham khảo, tổ chức và diễn đạt tài liệu dự án. Bảng dưới đây ghi rõ mục đích sử dụng và phần sinh viên tự rà soát, chỉnh sửa. Không ghi thêm công cụ hoặc phiên bản AI chưa được xác nhận.
 
 | Tên công cụ AI | Mục đích sử dụng | Công việc sinh viên tự thực hiện (kiểm chứng & sửa đổi) | Link commit minh chứng |
 |---|---|---|---|
-| **Claude (bản thông thường; không ghi model/version cụ thể)** | Hỗ trợ tham khảo cấu trúc tài liệu kiến trúc và cách trình bày luồng phối hợp giữa EventBridge, Lambda và SNS. | Sinh viên tự rà soát nội dung theo yêu cầu dự án và giới hạn AWS Learner Lab, sau đó chỉnh sửa tài liệu trong repository. | [Commit kiến trúc](https://github.com/nguyentrung01ute-ui/autoschedule/commit/1fd8d61db48a09362c802cdfe4efa5b47d433d2b) |
-| **Claude (bản thông thường; không ghi model/version cụ thể)** | Hỗ trợ tham khảo cách tổ chức tài liệu Runbook Tuần 1 và checklist kiểm tra tài nguyên. | Sinh viên tự rà soát và hoàn thiện các bước hướng dẫn trong runbook. Chỉ xem các thao tác AWS là đã thực hiện khi có minh chứng tương ứng. | [Commit runbook](https://github.com/nguyentrung01ute-ui/autoschedule/commit/68cce0684e522a4c18b7327ffb363c28b78a8cc2) |
-| **Claude (bản thông thường; không ghi model/version cụ thể)** | Hỗ trợ tham khảo cách diễn đạt logic lịch và xử lý múi giờ trong tài liệu/mã nguồn. | Sinh viên tự đọc, kiểm tra và chỉnh sửa mã nguồn; các kiểm thử hoặc thao tác triển khai chỉ được xem là hoàn tất khi có kết quả kiểm chứng thực tế. | [Commit scheduler](https://github.com/nguyentrung01ute-ui/autoschedule/commit/e91853a) |
+| **Claude (bản thông thường; chưa xác nhận model/version cụ thể)** | Hỗ trợ tham khảo cấu trúc tài liệu kiến trúc và cách trình bày luồng phối hợp giữa EventBridge, Lambda và SNS. | Sinh viên tự đối chiếu nội dung với mục tiêu dự án và giới hạn AWS Learner Lab, sau đó rà soát và chỉnh sửa tài liệu kiến trúc trong repository. | [Commit 1fd8d61](https://github.com/nguyentrung01ute-ui/autoschedule/commit/1fd8d61db48a09362c802cdfe4efa5b47d433d2b) |
+| **Claude (bản thông thường; chưa xác nhận model/version cụ thể)** | Hỗ trợ tham khảo cách tổ chức Runbook Tuần 1 và checklist kiểm tra tài nguyên. | Sinh viên tự rà soát, chỉnh sửa các bước hướng dẫn và đối chiếu các thao tác AWS với ảnh minh chứng thực tế có trong repository; không xem một thao tác là đã hoàn tất nếu chưa có bằng chứng. | [Commit 68cce06](https://github.com/nguyentrung01ute-ui/autoschedule/commit/68cce0684e522a4c18b7327ffb363c28b78a8cc2) |
+| **Claude (bản thông thường; chưa xác nhận model/version cụ thể)** | Hỗ trợ tham khảo cách diễn đạt logic lập lịch và xử lý múi giờ trong tài liệu/mã nguồn scheduler. | Sinh viên tự đọc và rà soát mã nguồn, chỉnh sửa theo yêu cầu dự án; chỉ ghi nhận việc kiểm thử hoặc triển khai là hoàn tất khi có kết quả kiểm chứng tương ứng. | [Commit scheduler](https://github.com/nguyentrung01ute-ui/autoschedule/commit/e91853a) |
+
+**Lưu ý:** Chỉ thay tên công cụ thành một phiên bản cụ thể (ví dụ Claude 3.5 Sonnet hoặc ChatGPT GPT-4o) nếu nhóm xác nhận thực sự đã sử dụng phiên bản đó. Các mô tả về việc chạy lệnh, tạo tài nguyên hoặc kiểm thử cũng cần khớp với công việc thực tế và minh chứng của nhóm.
 
 ---
 
