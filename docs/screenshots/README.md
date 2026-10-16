@@ -1,32 +1,22 @@
-# Minh chứng AWS — Tuần 1
+# Ảnh minh chứng AWS — AutoSchedule
 
-Thư mục này lưu các ảnh minh chứng của báo cáo Tuần 1. Hiện có 14 ảnh `week1-evidence-01.png` đến `week1-evidence-14.png` và sơ đồ `autoschedule-infrastructure.png`.
+Thư mục này lưu ảnh minh chứng thực tế cho các tuần thực hành.
 
-## Minh chứng hiện có
+## Tuần 1
 
-- Sơ đồ kiến trúc AutoSchedule.
-- Ảnh khởi động AWS Learner Lab và ảnh IAM Policies.
-- Ảnh S3 Block Public Access, tags và default encryption.
-- Ảnh EC2 Running, instance tags và EBS volume tags.
-- Ảnh RDS Available, cấu hình và tags.
-- Ảnh SageMaker Notebook InService và tags.
-- Ảnh kiểm tra EC2/EBS và tài nguyên còn sót.
+- Ảnh minh chứng theo danh mục: [docs/week1-evidence.md](../week1-evidence.md)
+- Các ảnh có tiền tố `week1-evidence-` và sơ đồ `autoschedule-infrastructure.png`.
 
-Danh mục và liên kết tới từng ảnh: [docs/week1-evidence.md](../week1-evidence.md).
+## Tuần 2
 
-## Minh chứng còn thiếu hoặc cần xác minh trước khi nộp
+- Danh mục đầy đủ 34 ảnh và mô tả: [docs/week2-evidence.md](../week2-evidence.md)
+- Worklog và nhiệm vụ từng thành viên: [worklog/week2.md](../../worklog/week2.md)
+- Ảnh được đánh số từ `week2-evidence-01-pytest-11-passed.png` đến `week2-evidence-34-report-email.png`.
+- Bộ ảnh bao gồm pytest, xác nhận SNS, cấu hình Lambda, kiểm thử START/STOP EC2, kiểm thử tag hợp lệ/không hợp lệ/`off`/thiếu tag, log enforce và email báo cáo SNS; ngoài ra có minh chứng RDS và SageMaker.
 
-1. **Account ID, Region và thời gian thực hành:** chưa có ảnh được xác định rõ trong danh mục hiện tại là bằng chứng đầy đủ cho cả ba thông tin. Nếu ảnh `week1-evidence-02.png` không hiển thị rõ các thông tin này, thêm ảnh AWS Console/Learner Lab thể hiện chúng.
-2. **Role LabRole của SageMaker:** ảnh IAM Policies hiện tại chưa chứng minh Notebook đã được gán `LabRole`. Cần ảnh cấu hình SageMaker Notebook thể hiện execution role được chọn; nếu cần, thêm ảnh IAM Roles thể hiện tên/ARN của role.
-3. **Kết quả chạy `scripts/05_status.sh`:** chưa có ảnh đầu ra riêng được liệt kê trong bộ 14 ảnh. Nếu báo cáo dùng script này để khẳng định trạng thái tài nguyên, lưu đầu ra thực tế và thêm ảnh/log vào thư mục.
-4. **Đối chiếu nội dung từng ảnh:** cần mở các ảnh hiện có để xác nhận chữ, trạng thái tài nguyên, tags và cấu hình đều đọc được. Không thể kết luận chỉ từ việc file ảnh tồn tại.
+## Kiểm tra trước khi nộp
 
-## Kiểm tra trước khi commit
-
-- [x] Có đủ 14 ảnh PNG theo danh mục.
-- [ ] Xác minh ảnh có hiển thị Account ID, Region và thời gian cần thiết.
-- [ ] Bổ sung bằng chứng SageMaker sử dụng `LabRole`.
-- [ ] Bổ sung đầu ra `scripts/05_status.sh` nếu dùng làm bằng chứng kiểm tra.
-- [ ] Kiểm tra ảnh/log không để lộ access key, secret key, session token hoặc dữ liệu nhạy cảm.
-
-Chỉ thêm ảnh chụp/log thực tế từ môi trường đã thực hành. Không tạo ảnh minh họa thay cho kết quả AWS và không suy đoán ngày hoặc trạng thái nếu nguồn không chứng minh được.
+- Mở từng ảnh và xác nhận trạng thái, tag, log và nội dung hiển thị đọc được.
+- Đối chiếu số hình trong báo cáo Word với bảng tại [docs/week2-evidence.md](../week2-evidence.md).
+- Không commit access key, secret key, session token hoặc thông tin nhạy cảm.
+- Chỉ dùng ảnh chụp/log thực tế; không tạo ảnh minh họa thay cho kết quả AWS.
