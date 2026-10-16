@@ -12,7 +12,7 @@
 - **Tổng thời lượng đã ghi nhận:** 17 giờ 17 phút
   - **Nguyễn Văn Thi:** 8 giờ 37 phút
   - **Nguyễn Văn Trung:** 8 giờ 40 phút
-- **Trạng thái minh chứng:** Đã ghi nhận và đính kèm đầy đủ các ảnh minh chứng kiểm thử tại thư mục `docs/screenshots/`.
+- **Trạng thái minh chứng:** Đã cập nhật đủ 34 ảnh minh chứng Tuần 2 trong `docs/screenshots/`; danh mục và mô tả từng ảnh được liên kết tại [docs/week2-evidence.md](../docs/week2-evidence.md).
 
 ---
 
@@ -50,9 +50,9 @@
 | Test bỏ qua tài nguyên đang chuyển trạng thái (Actions: []) | Nguyễn Văn Thi | CloudWatch Logs / Lambda Console | [week2-evidence-19-enforce-in-progress-skip.png](../docs/screenshots/week2-evidence-19-enforce-in-progress-skip.png) (Hình 19 trong báo cáo) |
 | Test STOP RDS ngoài khung giờ: trạng thái chuyển Stopping (INT-03) | Nguyễn Văn Thi | RDS Console | [week2-evidence-22-rds-stopping.png](../docs/screenshots/week2-evidence-22-rds-stopping.png) (Hình 22 trong báo cáo) |
 | Test STOP SageMaker ngoài khung giờ: trạng thái Stopped (INT-05) | Nguyễn Văn Thi | SageMaker Console | [week2-evidence-23-sagemaker-stopped.png](../docs/screenshots/week2-evidence-23-sagemaker-stopped.png) (Hình 23 trong báo cáo) |
-| Kiểm thử START/STOP EC2 qua đổi tag (INT-01, INT-02) | Nguyễn Văn Trung | EC2 Console | Đối chiếu hình 7, 8, 13, 14, 20, 21 trong báo cáo |
-| Kiểm thử tag sai định dạng, tag `off`, không tag (INT-07, INT-08) | Nguyễn Văn Trung | CloudWatch Logs | Đối chiếu hình 24–31 trong báo cáo |
-| Kiểm thử gửi báo cáo qua SNS với event `{"action":"report"}` (INT-09) | Cả hai | AWS SNS / Gmail | Đối chiếu hình 32–34 trong báo cáo (Email nhận lúc 16:52) |
+| Kiểm thử START/STOP EC2 qua đổi tag (INT-01, INT-02) | Nguyễn Văn Trung | EC2 Console / CloudWatch Logs | [Hình 7](../docs/screenshots/week2-evidence-07-ec2-stopped.png) · [Hình 8](../docs/screenshots/week2-evidence-08-ec2-tags.png) · [Hình 13](../docs/screenshots/week2-evidence-13-enforce-start-log.png) · [Hình 14](../docs/screenshots/week2-evidence-14-ec2-running.png) · [Hình 20](../docs/screenshots/week2-evidence-20-enforce-stop-log.png) · [Hình 21](../docs/screenshots/week2-evidence-21-ec2-stopped-after-enforce.png) |
+| Kiểm thử tag sai định dạng, tag `off`, không tag (INT-07, INT-08) | Nguyễn Văn Trung | EC2 Console / CloudWatch Logs | [Hình 24](../docs/screenshots/week2-evidence-24-ec2-tag-schedule-abc.png) · [Hình 25](../docs/screenshots/week2-evidence-25-enforce-invalid-tag-result.png) · [Hình 26](../docs/screenshots/week2-evidence-26-cloudwatch-invalid-schedule-tag.png) · [Hình 27](../docs/screenshots/week2-evidence-27-ec2-tag-schedule-removed.png) · [Hình 28](../docs/screenshots/week2-evidence-28-enforce-no-schedule-tag-skip.png) · [Hình 29](../docs/screenshots/week2-evidence-29-ec2-running-schedule-off.png) · [Hình 30](../docs/screenshots/week2-evidence-30-enforce-schedule-off-stop.png) · [Hình 31](../docs/screenshots/week2-evidence-31-ec2-stopped-schedule-off.png) |
+| Kiểm thử gửi báo cáo qua SNS với event `{"action":"report"}` (INT-09) | Cả hai | Lambda / AWS SNS / Gmail | [Hình 3](../docs/screenshots/week2-evidence-03-report-test-event.png) · [Hình 32](../docs/screenshots/week2-evidence-32-run-report-event.png) · [Hình 33](../docs/screenshots/week2-evidence-33-report-result.png) · [Hình 34](../docs/screenshots/week2-evidence-34-report-email.png) (Email nhận lúc 16:52) |
 | Soạn thảo, hoàn thiện báo cáo và đồng bộ Git Tuần 2 | Cả hai | [worklog/week2.md](week2.md) | Hoàn thành và cập nhật trên nhánh `main` |
 
 ---
