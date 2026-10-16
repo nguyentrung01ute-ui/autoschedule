@@ -72,7 +72,7 @@ Sau đó:
     ./scripts/04_create_sagemaker.sh
     ./scripts/05_status.sh
 
-Báo cáo Tuần 1 do nhóm cung cấp có 14 ảnh nhúng ghi lại kiến trúc và thực hành AWS. Ảnh chưa được tách thành file riêng trong `docs/screenshots/`; cần bổ sung ảnh gốc và ngày thực hiện chính xác trong worklog trước khi nộp. Báo cáo tự lưu ý ảnh IAM Policies chưa đủ chứng minh LabRole. Không tự tạo ngày hoặc minh chứng.
+Ảnh minh chứng đã được lưu trong `docs/screenshots/`. Danh mục Tuần 1 ở [docs/week1-evidence.md](docs/week1-evidence.md), danh mục 34 ảnh Tuần 2 ở [docs/week2-evidence.md](docs/week2-evidence.md). Trước khi nộp, cần mở và đối chiếu ảnh thực tế với nội dung báo cáo, đặc biệt các cấu hình IAM/LabRole; không tự tạo ngày hoặc minh chứng.
 
 ## Test local
 
@@ -101,6 +101,8 @@ Kiểm tra thêm EBS, snapshot, Elastic IP và tài nguyên còn sót.
 - PROJECT_PLAN.md: kế hoạch 4 tuần và Definition of Done.
 - docs/ROADMAP.md: tiến độ và mốc kiểm soát.
 - docs/week1-runbook.md: hướng dẫn thực hành Tuần 1.
+- docs/week1-evidence.md và docs/week2-evidence.md: danh mục ảnh minh chứng.
+- worklog/week2.md: nhiệm vụ, thời lượng và liên kết minh chứng Tuần 2.
 - docs/test-plan.md: unit/integration test.
 - docs/iam-requirements.md: quyền LabRole.
 - docs/cost-analysis.md: cách tính chi phí.
