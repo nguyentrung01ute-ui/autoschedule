@@ -51,6 +51,7 @@ Tổng hợp kết quả đạt được và khả năng mở rộng.
 
 ## 12. Phụ lục
 - Worklog tuần 1-4.
-- Ảnh minh chứng.
+- Ảnh minh chứng: [Tuần 1](week1-evidence.md), [Tuần 2](week2-evidence.md), [thư mục ảnh](screenshots/README.md).
+- Worklog: [Tuần 1](../worklog/week1.md), [Tuần 2](../worklog/week2.md).
 - Link GitHub.
 - Video demo.
