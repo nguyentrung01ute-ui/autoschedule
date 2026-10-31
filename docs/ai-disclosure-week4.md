@@ -16,4 +16,4 @@
 
 ## 3. Minh chứng Git
 - **Commit báo cáo Tuần 4 (Nguyễn Văn Trung):** [Commit b3196b4](https://github.com/nguyentrung01ute-ui/autoschedule/commit/b3196b48759b6176f752eedc6d5c98c408847888)
-- **Commit ảnh minh chứng Hình 10–16 và tài liệu Tuần 4 (Nguyễn Văn Thi):** xem [worklog/week4.md](../worklog/week4.md)
+- **Commit ảnh minh chứng Hình 10–16 và tài liệu Tuần 4 (Nguyễn Văn Thi):** [Commit 1c77812](https://github.com/nguyentrung01ute-ui/autoschedule/commit/1c77812d0444021e395db45397f9f7523325312f)
