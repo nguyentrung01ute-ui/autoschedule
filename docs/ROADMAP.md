@@ -15,7 +15,8 @@
 | Sơ đồ, checklist tuần 1 | `docs/architecture.md`, `docs/week1-checklist.md` | Xong |
 | Worklog | `worklog/week1.md` | Đã cập nhật nội dung Tuần 1 và tổng giờ theo báo cáo nhóm; ngày thực hiện chưa xác nhận |
 | Minh chứng | `docs/screenshots/` | Báo cáo nhóm DOCX có 14 ảnh nhúng về kiến trúc và AWS; chưa tách thành file ảnh riêng trong repo. Ảnh IAM Policies được ghi chú là chưa đủ chứng minh LabRole |
-| Báo cáo, kịch bản demo, phân tích chi phí | | Chưa có |
+| Báo cáo, kịch bản demo, phân tích chi phí | `docs/report.md`, `docs/demo-script.md`, `docs/cost-analysis.md` | Tuần 4: đã điền báo cáo cuối kỳ và bảng chi phí (AWS Pricing Calculator); video demo 9:32 |
+| Minh chứng Tuần 4 | `docs/week4-evidence.md` | Hình 10–16 đã upload (Thi); Hình 01–09 do Trung bổ sung |
 
 ## 2. Việc còn thiếu trong repo (bổ sung theo tuần)
 
@@ -73,16 +74,16 @@
 
 ### Tuần 4 (27/10 - 02/11): Kiểm thử tổng thể, tối ưu, dọn dẹp, báo cáo, demo
 
-| ID | Việc | SV | Giờ | Minh chứng |
-|---|---|---|---|---|
-| 4.1 | Dựng lại từ đầu bằng một lệnh | A | 1 | Ảnh deploy |
-| 4.2 | Test end-to-end với lịch ngắn (bật 10 phút) cho cả 3 loại | A+B | 2 | `docs/test-results.md` |
-| 4.3 | Test lỗi và Alarm gửi email | B | 1 | Ảnh email cảnh báo |
-| 4.4 | Tính chi phí và mức tiết kiệm | B | 2 | `docs/cost-analysis.md` |
-| 4.5 | Viết báo cáo | A+B | 3 | `docs/report.md` |
-| 4.6 | Quay video demo ≤ 10 phút | A+B | 1.5 | Video |
-| 4.7 | Dọn dẹp bằng `scripts/99_cleanup.sh --bucket` | A | 1 | Ảnh console trống |
-| 4.8 | Ôn vấn đáp, worklog cuối | A+B | 1.5 | |
+| ID | Việc | SV | Giờ | Minh chứng | Trạng thái |
+|---|---|---|---|---|---|
+| 4.1 | Dựng lại từ đầu bằng một lệnh | Trung | 1 | Báo cáo Tuần 4, Hình 1–2 (INT-15) | ☑ Xong |
+| 4.2 | Test end-to-end với lịch ngắn cho cả 3 loại | Trung | 2 | Báo cáo Tuần 4, Hình 3–9 (INT-16a/b) | ☑ Xong |
+| 4.3 | Test lỗi và Alarm gửi email | Thi | 1 | [week4-evidence.md](week4-evidence.md), Hình 10–14 (INT-17–19) | ☑ Xong |
+| 4.4 | Tính chi phí và mức tiết kiệm | Thi | 2 | [cost-analysis.md](cost-analysis.md), Hình 15–16 | ☑ Xong |
+| 4.5 | Viết báo cáo | A+B | 3 | [report.md](report.md), báo cáo Word Tuần 4 | ☑ Xong |
+| 4.6 | Quay video demo ≤ 10 phút | A+B | 1.5 | [Video 9:32](https://drive.google.com/file/d/1gMQxJKQ81sfH3KW3673XL4wAbYJkwzjC/view?usp=sharing) | ☑ Xong |
+| 4.7 | Dọn dẹp bằng `scripts/99_cleanup.sh --bucket` | Trung | 1 | Báo cáo Tuần 4, mục 2.6 | ☑ Xong |
+| 4.8 | Ôn vấn đáp, worklog cuối | A+B | 1.5 | [worklog/week4.md](../worklog/week4.md) | ☑ Xong |
 
 ## 4. Mốc kiểm soát
 
@@ -106,11 +107,11 @@
 
 ## 6. Tiêu chí hoàn thành
 
-- [ ] Lambda xử lý đúng EC2, RDS, SageMaker
-- [ ] EventBridge tự chạy; email báo cáo hằng ngày
-- [ ] Stack dựng lại từ đầu bằng một lệnh
-- [ ] Alarm lỗi Lambda hoạt động
-- [ ] Mọi tài nguyên có tag Project/Owner
-- [ ] Có bảng kiểm thử, phân tích chi phí, báo cáo, video demo
-- [ ] Worklog đủ 4 tuần, mỗi SV ≥ 8 giờ/tuần
-- [ ] Đã dọn dẹp tài nguyên
+- [x] Lambda xử lý đúng EC2, RDS, SageMaker
+- [x] EventBridge tự chạy; email báo cáo hằng ngày
+- [x] Stack dựng lại từ đầu bằng một lệnh
+- [x] Alarm lỗi Lambda hoạt động
+- [x] Mọi tài nguyên có tag Project/Owner
+- [x] Có bảng kiểm thử, phân tích chi phí, báo cáo, video demo
+- [x] Worklog đủ 4 tuần, mỗi SV ≥ 8 giờ/tuần
+- [x] Đã dọn dẹp tài nguyên (theo báo cáo Tuần 4, mục 2.6)
