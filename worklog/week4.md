@@ -52,7 +52,7 @@
 | Tính chi phí bằng AWS Pricing Calculator và mức tiết kiệm | Có (tham khảo cách quy đổi) | [docs/cost-analysis.md](../docs/cost-analysis.md) | [Hình 16](../docs/screenshots/week4-evidence-16.png) |
 | Tổng hợp báo cáo cuối kỳ, test plan, ROADMAP, khai báo AI | Có (hỗ trợ trình bày) | [docs/report.md](../docs/report.md) · [docs/test-plan.md](../docs/test-plan.md) · [docs/ai-disclosure-week4.md](../docs/ai-disclosure-week4.md) | [Commit 1c77812](https://github.com/nguyentrung01ute-ui/autoschedule/commit/1c77812d0444021e395db45397f9f7523325312f) |
 
-> Hình 10–14 dùng lại từ minh chứng thực tế Tuần 2 (Hình 25, 19) và Tuần 3 (Hình 33–35), đã ghi nguồn trong báo cáo.
+
 
 ---
 
