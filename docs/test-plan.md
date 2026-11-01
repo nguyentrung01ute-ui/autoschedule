@@ -23,6 +23,9 @@ Kiểm tra: không có Schedule, Project khác, off, trong/ngoài khung giờ, b
 | INT-12 | CloudFormation | Deploy stack lần 1 bằng `scripts/07_deploy.sh` | Stack `CREATE_COMPLETE` |
 | INT-13 | CloudFormation | Xóa stack (`delete-stack`) rồi deploy lại | Stack `CREATE_COMPLETE` lần 2 |
 | INT-14 | CloudWatch | Gây lỗi Lambda (`TOPIC_ARN` sai) | Alarm `ALARM`, có email, sau đó về `OK` |
+| INT-15 | CloudFormation | Xóa stack, dựng lại bằng một lệnh (`./scripts/07_deploy.sh`) | Stack `CREATE_COMPLETE`, nhận email xác nhận subscription và email báo cáo |
+| INT-16a | EventBridge (EC2, RDS, SageMaker) | Đặt lịch ngắn trong giờ (`06_set_schedule.sh`), cả ba Stopped, chờ chu kỳ | Cả ba tự START (`Running` / `Available` / `InService`) |
+| INT-16b | EventBridge (EC2, RDS, SageMaker) | Đổi lịch sang ngoài khung giờ, chờ chu kỳ | Cả ba tự STOP (`Stopped` / `Stopping`) |
 | INT-17 | Lambda | Tag `Schedule` sai (`abc`) | Log `Invalid schedule tag`, `Actions: []` |
 | INT-18 | Lambda | Gọi enforce khi tài nguyên đang chuyển trạng thái | Bỏ qua, không start lần hai |
 | INT-19 | CloudWatch | Gây lỗi Lambda (`TOPIC_ARN` sai) | Alarm `ALARM`, có email, sau đó về `OK` |
@@ -35,10 +38,11 @@ Kiểm tra: không có Schedule, Project khác, off, trong/ngoài khung giờ, b
 | INT-12 | ☑ Đạt | [Tuần 3, Hình 13–18](week3-evidence.md) |
 | INT-13 | ☑ Đạt | [Tuần 3](week3-evidence.md) (deploy lại bằng `07_deploy.sh`) |
 | INT-14 | ☑ Đạt | [Tuần 3, Hình 31–35](week3-evidence.md) |
+| INT-15 | ☑ Đạt | [Tuần 4, Hình 1–2](week4-evidence.md) (`week4-evidence-01.png`, `02a.png`, `02b.png`) |
+| INT-16a | ☑ Đạt | [Tuần 4, Hình 3–7](week4-evidence.md) (`week4-evidence-03.png` đến `07.png`) |
+| INT-16b | ☑ Đạt | [Tuần 4, Hình 8–9](week4-evidence.md) (`week4-evidence-08.png`, `09.png`) |
 | INT-17 | ☑ Đạt | [Tuần 4, Hình 10](week4-evidence.md) |
 | INT-18 | ☑ Đạt | [Tuần 4, Hình 11](week4-evidence.md) |
 | INT-19 | ☑ Đạt | [Tuần 4, Hình 12–14](week4-evidence.md) |
-
-INT-15, INT-16a, INT-16b (dựng lại bằng một lệnh, end-to-end lịch ngắn) do Nguyễn Văn Trung bổ sung.
 
 Không ghi PASS nếu chưa có log/ảnh/trạng thái thực tế.
